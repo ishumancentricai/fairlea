@@ -3,6 +3,21 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+Law enforcement agencies are increasingly relying on artificial intelligence (AI), aiming to
+increase the efficiency of investigations. At the same time, however, these new technologies
+pose risks to the freedom of society and individual affected persons, such as being
+innocently prosecuted or discriminated against. These risks are mainly due to the use of non-
+transparent black box AI tools that are hard to comprehend and explain to those involved in
+criminal proceedings as well as machine-learned biases.
+Cryptoassets, such as Bitcoin or Ethereum, are widely used to commit crimes, especially but
+not limited to trafficking in illegal goods and services, fraud, and extortion. The prosecution of
+those crimes heavily relies on so-called cryptoasset tracing tools, which use heuristics and
+statistical methods to follow the money and deanonymize users potentially involved in
+criminal activities. Although the use of classic (non-AI-supported) methods for law
+enforcement in cryptoasset systems is now well-researched, there has been a lack of
+research on the use of AI for law enforcement in cryptoasset systems from a legal and
+technical perspective.
+Therefore, this research group aims to investigate, through a case study of cryptoasset
+forensics, how AI-supported tools can be utilized in criminal investigations to meet both the
+demands of law enforcement authorities and all legal obligations under German and
+European law.
