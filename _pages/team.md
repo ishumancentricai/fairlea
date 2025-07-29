@@ -3,7 +3,7 @@ permalink: /team/
 title: "Team"
 ---
 
-<h2>Meet Our Team</h2>
+About
 
 <table>
 
@@ -11,7 +11,7 @@ title: "Team"
 
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo-christian-rueckert.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-christian-rueckert.jpg" alt="Christian Rückert" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof. Dr. Christian Rückert</strong></p>
@@ -27,11 +27,11 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo-niklas-kuehl.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-niklas-kuehl.jpg" alt="Niklas Kühl" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof Dr. Niklas Kühl</strong></p>
-      <p>TBD</p>
+      <p>Niklas Kühl is a Full Professor of Information Systems and Human-Centric Artificial Intelligence at the University of Bayreuth. He also serves as a Group Leader at the Information Systems branch of Fraunhofer FIT, Director at the Research Center Finance & Information Management (FIM), Senior Expert AI at IBM, and Associated Researcher at the Karlsruhe Institute of Technology (KIT). In addition to his academic roles, he brings practical experience from his former position as a Managing Consultant in Data Science at IBM.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -43,7 +43,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Bernhard Haslhofer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Dr. Bernhard Haslhofer</strong></p>
@@ -62,7 +62,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo-jana-elsner.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-thomas-goger.jpg" alt="Thomas Goger" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Goger</strong></p>
@@ -78,11 +78,11 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo-leopold-mueller.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-jana-elsner.jpg" alt="Jana Elsner" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Jana Elsner</strong></p>
-      <p>TBD</p>
+      <p>"Legal doctoral candidate and research associate specializing in criminal procedure law, with a focus on the use of artificial intelligence in criminal prosecution and law enforcement in the cryptocurrency sector.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -94,7 +94,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-        <img src="/assets/images/bio-photo.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+        <img src="/assets/images/bio-photo-leopold-mueller.jpg" alt="Leopold Müller" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
         <p><strong>Leopold Müller</strong></p>
@@ -110,11 +110,11 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="/assets/images/bio-photo.jpg" alt="Person 1" style="max-width: 100%; border-radius: 8px;">
+      <img src="/assets/images/bio-photo-thomas-niedermayer.webp" alt="Thomas Niedermayer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
-      <p>TBD</p>
+      <p>Backend engineer with a focus on mass crypto data processing and automation.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
