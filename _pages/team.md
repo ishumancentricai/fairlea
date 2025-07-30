@@ -89,7 +89,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-        <img src="../assets/images/bio-photo-leopold-mueller.jpg" alt="Leopold Müller" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+        <img src="../assets/images/bio-photo-leopold-mueller.jpeg" alt="Leopold Müller" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
         <p><strong>Leopold Müller</strong></p>
