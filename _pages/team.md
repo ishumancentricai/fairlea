@@ -93,7 +93,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
         <p><strong>Leopold Müller</strong></p>
-        <p>TBD</p>
+        <p>Researcher at the Branch Business & Information Systems Engineering of the Fraunhofer FIT and a PhD candidate at the University of Bayreuth at the Chair of Information Systems and Human-Centric AI. In his research, he focuses on developing LLM solutions for real-world applications and AI-based decision support systems in minimal invasive surgeries.</p>
         <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
         </a>
@@ -105,7 +105,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="../assets/images/bio-photo-thomas-niedermayer.webp" alt="Thomas Niedermayer" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
