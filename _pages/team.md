@@ -6,7 +6,7 @@ title: "Team"
 <table>
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-christian-rueckert.jpg" alt="Christian Rückert" style="max-width: 100%; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-christian-rueckert.jpg" alt="Christian Rückert" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof. Dr. Christian Rückert</strong></p>
@@ -22,7 +22,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-niklas-kuehl.jpg" alt="Niklas Kühl" style="max-width: 100%; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-niklas-kuehl.jpg" alt="Niklas Kühl" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof Dr. Niklas Kühl</strong></p>
@@ -57,7 +57,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-thomas-goger.jpg" alt="Thomas Goger" style="max-width: 100%; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-thomas-goger.jpg" alt="Thomas Goger" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Goger</strong></p>
@@ -73,7 +73,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-jana-elsner.png" alt="Jana Elsner" style="max-width: 100%; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-jana-elsner.png" alt="Jana Elsner" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Jana Elsner</strong></p>
@@ -89,7 +89,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-        <img src="assets/images/bio-photo-leopold-mueller.jpg" alt="Leopold Müller" style="max-width: 100%; border-radius: 8px;">
+        <img src="../assets/images/bio-photo-leopold-mueller.jpeg" alt="Leopold Müller" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
         <p><strong>Leopold Müller</strong></p>
@@ -105,7 +105,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="max-width: 100%; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
