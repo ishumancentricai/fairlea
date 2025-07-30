@@ -77,7 +77,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Jana Elsner</strong></p>
-      <p>"Legal doctoral candidate and research associate specializing in criminal procedure law, with a focus on the use of artificial intelligence in criminal prosecution and law enforcement in the cryptocurrency sector.</p>
+      <p>Legal doctoral candidate and research associate specializing in criminal procedure law, with a focus on the use of artificial intelligence in criminal prosecution and law enforcement in the cryptocurrency sector.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -105,7 +105,7 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="../assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-thomas-niedermayer.webp" alt="Thomas Niedermayer" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
