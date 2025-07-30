@@ -3,12 +3,7 @@ permalink: /team/
 title: "Team"
 ---
 
-About
-
 <table>
-
-
-
   <tr>
     <td style="vertical-align: top; width: 150px;">
       <img src="assets/images/bio-photo-christian-rueckert.jpg" alt="Christian Rückert" style="max-width: 100%; border-radius: 8px;">
@@ -43,7 +38,7 @@ About
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="./assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Bernhard Haslhofer" style="max-width: 100%; border-radius: 8px;">
+      <img src="assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Bernhard Haslhofer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Dr. Bernhard Haslhofer</strong></p>
@@ -110,7 +105,7 @@ About
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-thomas-niedermayer.webp" alt="Thomas Niedermayer" style="max-width: 100%; border-radius: 8px;">
+      <img src="assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
@@ -123,3 +118,4 @@ About
       </a>
     </td>
   </tr>
+</table>
