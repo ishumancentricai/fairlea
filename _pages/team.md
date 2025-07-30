@@ -43,7 +43,7 @@ About
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Bernhard Haslhofer" style="max-width: 100%; border-radius: 8px;">
+      <img src="./assets/images/bio-photo-bernhard-haslhofer.jpg" alt="Bernhard Haslhofer" style="max-width: 100%; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Dr. Bernhard Haslhofer</strong></p>
