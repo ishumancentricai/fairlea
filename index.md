@@ -7,7 +7,7 @@ author_profile: true
 title: "FAIRLEA - Fair AI Research for Law Enforcement Agencies: An interdisciplinary
 investigation in the context of cryptoasset forensics"
 ---
-<img src="/assets/images/fairlea-logo.jpg" alt="FAIRLEA Logo" style="width: 100%; max-width: 600px;">
+<img src="assets/images/fairlea-logo.jpg" alt="FAIRLEA Logo" style="width: 100%; max-width: 600px;">
 
 Law enforcement agencies are increasingly relying on artificial intelligence (AI), aiming to
 increase the efficiency of investigations. At the same time, however, these new technologies
