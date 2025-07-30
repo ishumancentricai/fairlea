@@ -58,7 +58,7 @@ plugins:
 
 author:
   name   : "Fair AI Research for Law Enforcement Agencies"
-  avatar : "/assets/images/fairlea-logo.jpg"
+  avatar : "assets/images/fairlea-logo.jpg"
   bio    : "An interdisciplinary investigation in the context of cryptoasset forensics"
   links:
     #- label: "Website"
