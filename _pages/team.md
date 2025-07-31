@@ -26,7 +26,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof Dr. Niklas Kühl</strong></p>
-      <p>Niklas Kühl is a Full Professor of Information Systems and Human-Centric Artificial Intelligence at the University of Bayreuth. He also serves as a Group Leader at the Information Systems branch of Fraunhofer FIT, Director at the Research Center Finance & Information Management (FIM), Senior Expert AI at IBM, and Associated Researcher at the Karlsruhe Institute of Technology (KIT). In addition to his academic roles, he brings practical experience from his former position as a Managing Consultant in Data Science at IBM.</p>
+      <p>Niklas Kühl is a full professor of information systems and human-centric AI at the University of Bayreuth, with roles at Fraunhofer FIT, FIM Research Institute, and IBM. His research spans machine learning, human-AI collaboration, fairness, and appropriate reliance. Previously, he led AI projects at IBM and earned his PhD (information systems) and habilitation (applied computer science) at the Karlsruhe Institute of Technology. He has published over 130 peer-reviewed articles and collaborates with global institutions like CMU, UT Austin, and MIT-IBM Watson AI Lab.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -77,7 +77,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Jana Elsner</strong></p>
-      <p>Legal doctoral candidate and research associate specializing in criminal procedure law, with a focus on the use of artificial intelligence in criminal prosecution and law enforcement in the cryptocurrency sector.</p>
+      <p>Jana Elsner is a legal doctoral candidate and research associate specializing in criminal procedure law, with a focus on the use of artificial intelligence in criminal prosecution and law enforcement in the cryptocurrency sector.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -93,7 +93,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
         <p><strong>Leopold Müller</strong></p>
-        <p>Researcher at the Branch Business & Information Systems Engineering of the Fraunhofer FIT and a PhD candidate at the University of Bayreuth at the Chair of Information Systems and Human-Centric AI. In his research, he focuses on developing LLM solutions for real-world applications and AI-based decision support systems in minimal invasive surgeries.</p>
+        <p>Leopold Müller is a researcher at the Branch Business & Information Systems Engineering of the Fraunhofer FIT and a PhD candidate at the University of Bayreuth at the Chair of Information Systems and Human-Centric AI. In his research, he focuses on developing LLM solutions for real-world applications and AI-based decision support systems in minimal invasive surgeries.</p>
         <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
         </a>
@@ -109,7 +109,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Niedermayer</strong></p>
-      <p>Backend engineer with a focus on mass crypto data processing and automation.</p>
+      <p>Thomas Niedermayer is a data engineer at Iknaio Cryptoasset Analytics specializing in crypto data processing and investigative analytics. He works on developing Graphsense, an open source cryptoasset analytics software and creates crypto analytics solutions to combat crime at scale. Thomas holds a Master's degree in data science from Vienna University of Technology and a Bachelor's in mathematics from the University of Vienna.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
