@@ -10,7 +10,11 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof. Dr. Christian Rückert</strong></p>
-      <p>TBD</p>
+      <p>Christian Rückert is one of the leading legal experts on both the use of AI
+for law enforcement and the fight against crypotasset-related crime. He has presented on
+both research areas at high-level conferences and published in top-tier journals, legal
+practice handbooks, and commentaries. He has also advised the German Federal
+Government and the Bundestag on issues relating to cybercrime.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -61,7 +65,7 @@ title: "Team"
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Thomas Goger</strong></p>
-      <p>TBD</p>
+      <p>Thomas Goger is Chief Public Prosecutor and Deputy Director of the Bavarian Central Office for the Prosecution of Cybercrime since it has been established in 2015. This office with currently 30 prosecutors and several IT specialists supporting them is one of the largest dedicated units in Europe for the prosecution of high-profile cyber cases. Thomas Goger has worked as a local prosecutor and district judge earlier in his career. He has been called upon as adviser to ministries and parliament on various cybercrime related topics. In 2016, he was seconded to the INTERPOL Global Complex for Innovation in Singapore for a few months. He has appeared as a speaker at and facilitator of various international events ever since. He is author of various articles in law journals on asset recovery regarding cryptocurrencies, on CSAM investigations and on MLAT reform. He has been a presenter at national and international conferences in Germany, Australia, France, Singapore, India, Croatia, Montenegro and the Philippines. He also is associated scientist with the research training group "Cybercrime & Forensic Computing" at the Friedrich-Alexander-University Erlangen-Nuremberg.</p>
       <a href="mailto:john@example.com" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
