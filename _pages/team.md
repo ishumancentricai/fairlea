@@ -121,7 +121,7 @@ Government and the Bundestag on issues relating to cybercrime.</p>
   </tr>
   <tr>
     <td style="vertical-align: top; width: 150px;">
-      <img src="../assets/images/bio-photo-simon-lobinger.jpg" alt="Simon Lobinger" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+      <img src="../assets/images/bio-photo-simon-lobinger.png" alt="Simon Lobinger" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Simon Lobinger</strong></p>
