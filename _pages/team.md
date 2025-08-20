@@ -11,10 +11,10 @@ title: "Team"
     <td style="vertical-align: top; padding-left: 20px;">
       <p><strong>Prof. Dr. Christian Rückert</strong></p>
       <p>Christian Rückert is one of the leading legal experts on both the use of AI
-for law enforcement and the fight against crypotasset-related crime. He has presented on
-both research areas at high-level conferences and published in top-tier journals, legal
-practice handbooks, and commentaries. He has also advised the German Federal
-Government and the Bundestag on issues relating to cybercrime.</p>
+      for law enforcement and the fight against crypotasset-related crime. He has presented on
+      both research areas at high-level conferences and published in top-tier journals, legal
+      practice handbooks, and commentaries. He has also advised the German Federal
+      Government and the Bundestag on issues relating to cybercrime.</p>
       <a href="mailto:lehrstuhl.str2[at]uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
@@ -143,6 +143,21 @@ Government and the Bundestag on issues relating to cybercrime.</p>
       <p>Sophia Schütz is a student research assistant at the Chair of Criminal Law, Criminal Procedure and IT Criminal Law of Prof. Dr. Christian Rückert at the University of Bayreuth with a special interest in the use of AI for law enforcement.</p>
       <a href="mailto:sophia.schuetz@uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
         📧 Email
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
+      <img src="../assets/images/bio-photo-marie-kufner.jpg" alt="Marie Kufner" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 20px;">
+      <p><strong>Marie Kufner</strong></p>
+      <p>Marie Kufner is a student research assistant at the Branch Business & Information Systems Engineering of Fraunhofer FIT and at the Chair of Digital Management at the University of Hohenheim with a particular interest in AI, its diverse areas of application, and its responsible use.</p>
+      <a href="mailto:marie.kufner@uni-hohenheim.de" style="text-decoration: none; margin-right: 10px;">
+        📧 Email
+      </a>
+      <a href="https://www.linkedin.com/in/marie-kufner" target="_blank" style="text-decoration: none;">
+        🔗 LinkedIn
       </a>
     </td>
   </tr>
