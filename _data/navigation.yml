@@ -3,7 +3,7 @@ main:
     url: /events/
   - title: "Research"
     url: /research/
-  - title: "News"
-    url: /news/
+  #- title: "News"
+   # url: /news/
   - title: "Team"
     url: /team/
