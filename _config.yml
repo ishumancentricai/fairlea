@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   investigation in the context of cryptoasset forensics
 #twitter_username: username
 #github_username: username
-minimal_mistakes_skin: aqua
+minimal_mistakes_skin: default 
 search: true
 
 # Build settings
