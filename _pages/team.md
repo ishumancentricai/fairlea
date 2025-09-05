@@ -85,6 +85,9 @@ title: "Team"
       <a href="mailto:jana.elsner@uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
         📧 Email
       </a>
+      <a href="https://www.linkedin.com/in/jana-elsner-40a798382/" target="_blank" style="text-decoration: none;">
+        🔗 LinkedIn
+        </a>
     </td>
   </tr>
   
