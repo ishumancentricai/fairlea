@@ -1,0 +1,6 @@
+/* Follow-Button überall verstecken */
+.author__urls-wrapper > button.btn,
+.author__urls-wrapper > a.btn {
+  display: none !important;
+}
+

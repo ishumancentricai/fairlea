@@ -1,0 +1,14 @@
+---
+---
+
+@import "minimal-mistakes/skins/default";
+@import "minimal-mistakes";
+
+/* Nur mobiler Follow-Button verstecken */
+@media (max-width: 768px) {
+  .author__urls-wrapper > button.btn,
+  .author__urls-wrapper > a.btn,
+  .page__meta-follow {
+    display: none !important;
+  }
+}

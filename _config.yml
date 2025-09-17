@@ -35,6 +35,10 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
 
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -60,7 +64,7 @@ author:
   name   : "Fair AI Research for Law Enforcement Agencies"
   avatar : "assets/images/fairlea-logo.png"
   bio    : "An interdisciplinary investigation in the context of cryptoasset forensics"
-  links:
+  #links:
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
     #  url: "https://"
@@ -104,7 +108,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
