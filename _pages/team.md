@@ -151,6 +151,18 @@ title: "Team"
   </tr>
   <tr>
     <td style="vertical-align: top; width: 150px;">
+      <img src="../assets/images/bio-photo-arian-javaheri.jpg" alt="Sophia Schütz" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 20px;">
+      <p><strong>Arian Javaheri</strong></p>
+      <p>Arian Javaheri is a student research assistant at Fraunhofer FIT and a computer science student at the University of Bayreuth. He develops LLM-based AI agents to enhance business processes in platform and innovation management and supports AI-driven automation projects at Siemens Healthineers.</p>
+      <a href="mailto:arian.javaheri@uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
+        📧 Email
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
       <img src="../assets/images/bio-photo-marie-kufner.jpg" alt="Marie Kufner" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">

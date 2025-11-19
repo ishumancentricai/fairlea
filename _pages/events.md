@@ -5,6 +5,8 @@ permalink: /events/
 
 <h2>Upcoming Events</h2>
 
+<!--
+
 <table style="width: 100%; border-spacing: 20px;">
   <tr>
     <td style="width: 200px; vertical-align: top;">
@@ -25,3 +27,6 @@ permalink: /events/
     </td>
   </tr>
 </table>
+-->
+
+**No upcoming events at the moment.**
