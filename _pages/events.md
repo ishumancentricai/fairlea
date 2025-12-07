@@ -9,8 +9,13 @@ permalink: /events/
 **Date:** 02–03 December 2025  
 **Location:** Complexity Science Hub Vienna, Inknao
 
-![Vienna Meeting Photo 1](/assets/images/Wien-event-2.png)
-![Vienna Meeting Photo 2](/assets/images/Wien-event-1.jpeg)
+<p style="text-align: center;">
+  <img src="/assets/images/Wien-event-2.png" alt="Vienna Meeting Photo 1" style="max-width: 500px; border-radius: 8px; margin-bottom: 20px;">
+</p>
+
+<p style="text-align: center;">
+  <img src="/assets/images/Wien-event-1.jpeg" alt="Vienna Meeting Photo 2" style="max-width: 500px; border-radius: 8px; margin-bottom: 40px;">
+</p>
 
 
 
