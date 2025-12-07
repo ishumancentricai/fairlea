@@ -5,6 +5,20 @@ permalink: /events/
 
 <h2>Upcoming Events</h2>
 
+### First Project Meeting – Complexity Science Hub, Vienna  
+**Date:** 02–03 December 2025  
+**Location:** Complexity Science Hub Vienna, Inknao
+
+![Vienna Meeting Photo 1](/assets/images/Wien-event-2.png)
+![Vienna Meeting Photo 2](/assets/images/Wien-event-1.jpeg)
+
+
+
+
+### Kick-Off Event – University of Bayreuth  
+**Date:** 23–24 July 2025  
+**Location:** University of Bayreuth
+
 <!--
 
 <table style="width: 100%; border-spacing: 20px;">
@@ -29,4 +43,3 @@ permalink: /events/
 </table>
 -->
 
-**No upcoming events at the moment.**
