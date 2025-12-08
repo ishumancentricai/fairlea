@@ -3,7 +3,8 @@ title: "Events"
 permalink: /events/
 ---
 
-<h2>Events</h2>
+### FAIRLEA Events
+
 
 ### First Project Meeting – Complexity Science Hub, Vienna  
 **Date:** 02–03 December 2025  
