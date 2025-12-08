@@ -3,7 +3,7 @@ title: "Events"
 permalink: /events/
 ---
 
-<h2>Upcoming Events</h2>
+<h2>Events</h2>
 
 ### First Project Meeting – Complexity Science Hub, Vienna  
 **Date:** 02–03 December 2025  
