@@ -3,7 +3,7 @@ title: "Events"
 permalink: /events/
 ---
 
-### FAIRLEA Events
+
 
 
 ### First Project Meeting – Complexity Science Hub, Vienna  
