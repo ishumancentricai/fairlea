@@ -8,7 +8,7 @@ permalink: /events/
 
 ### First Project Meeting – Complexity Science Hub, Vienna  
 **Date:** 02–03 December 2025  
-**Location:** Complexity Science Hub Vienna, Inknao
+**Location:** Complexity Science Hub Vienna, Iknao
 
 <p style="text-align: center;">
   <img src="/assets/images/Wien-event-2.png" alt="Vienna Meeting Photo 1" style="max-width: 500px; border-radius: 8px; margin-bottom: 20px;">
