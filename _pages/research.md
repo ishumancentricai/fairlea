@@ -9,7 +9,9 @@ title: "Research"
 
 ## Related Work
 
-- [Criminal Liability of Generative Artificial Intelligence (2026). arXiv preprint.](https://arxiv.org/abs/2601.03788)
+- [Mojica-Hanke, A., Goger, T., Wölfel, S., Valerius, B., Herbold, S. (2026): Criminal Liability of Generative Artificial Intelligence Providers for User-Generated Child Sexual Abuse Material. arXiv preprint.](https://arxiv.org/abs/2601.03788)
+
+
 
 
 - [Deck, L., Schoeffer, J., De-Arteaga, M., Kühl, N. (2024): A Critical Survey on Fairness Benefits of XAI. ACM Conference on Fairness, Accountability, and Transparency (ACM FAccT).](https://doi.org/10.1145/3630106.3658990)
