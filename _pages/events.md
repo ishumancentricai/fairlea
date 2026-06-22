@@ -6,7 +6,22 @@ permalink: /events/
 
 
 
-### First Project Meeting – Complexity Science Hub, Vienna  
+### Second Project Meeting  
+**Date:** 17–18 June 2026  
+**Location:** Generalstaatsanwaltschaft Bamberg, Zentralstelle Cybercrime Bayern
+
+<p style="text-align: center;">
+  <img src="/assets/images/Bamberg-event-1.png" alt="Bamberg Meeting Group Photo" style="max-width: 500px; border-radius: 8px; margin-bottom: 20px;">
+</p>
+
+<p style="text-align: center;">
+  <img src="/assets/images/Bamberg-event-2.png" alt="Generalstaatsanwaltschaft Bamberg Sign" style="max-width: 500px; border-radius: 8px; margin-bottom: 40px;">
+</p>
+
+
+
+
+### First Project Meeting  
 **Date:** 02–03 December 2025  
 **Location:** Complexity Science Hub Vienna, Iknaio
 
@@ -21,7 +36,7 @@ permalink: /events/
 
 
 
-### Kick-Off Event – University of Bayreuth  
+### Kick-Off Event  
 **Date:** 23–24 July 2025  
 **Location:** University of Bayreuth
 
