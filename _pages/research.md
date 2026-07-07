@@ -4,7 +4,7 @@ title: "Research"
 ---
 ## Project Publications
 - [Mojica-Hanke, A., Goger, T., Wölfel, S., Valerius, B., Herbold, S. (2026): Criminal Liability of Generative Artificial Intelligence Providers for User-Generated Child Sexual Abuse Material. International Conference on AI Engineering.](https://arxiv.org/abs/2601.03788)
-- [Elsner, J., Müller, L., Juristischen Rundschau 2026. Vom Gesicht zum Gericht – KI-gestützte Verdachtskonkretisierung am Beispiel von KI-Systemen zur nachträglichen biometrischen Fernidentifikation.](https://doi.org/10.1515/juru-2026-3027)
+- [Elsner, J., Müller, L., Juristische Rundschau 2026. Vom Gesicht zum Gericht – KI-gestützte Verdachtskonkretisierung am Beispiel von KI-Systemen zur nachträglichen biometrischen Fernidentifikation.](https://doi.org/10.1515/juru-2026-3027)
 - [Mansouri, Y., Elsner J., MMR 2025, 647ff. Voraussetzungen für die Anordnung des Vermögensarrest bei sog. Kryptodiebstahl – Eine Anmerkung zu OLG Braunschweig, Beschl. v. 18. 09. 2024 – 1 Ws 185/24 (LG Göttingen, AG Göttingen).](https://beck-online.beck.de/Dokument?vpath=bibdata%2Fzeits%2Fmmr%2F2025%2Fcont%2Fmmr.2025.647.1.htm&pos=1)
 - [Elsner, J., Meinen, L., Rückert, C., KriPoZ 2025, 269ff. Mehr Sicherheit durch Strafverfolgung? Der Koalitionsvertrag im Lichte des IT-Strafrechts.](https://kripoz.de/wp-content/uploads/2025/09/elsner-meinen-rueckert-koalitionsvertrag-im-lichte-des-it-strafrechts.pdf)
 
