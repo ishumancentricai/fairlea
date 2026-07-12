@@ -124,6 +124,21 @@ title: "Team"
   </tr>
   <tr>
     <td style="vertical-align: top; width: 150px;">
+      <img src="../assets/images/bio-photo-michael-froewis.png" alt="Michael Fröwis" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 20px;">
+      <p><strong>Michael Fröwis</strong></p>
+      <p>Michael Fröwis is a software engineer at Iknaio Cryptoasset Analytics specializing in smart contract analysis and cryptoasset analytics. He works on developing GraphSense, an open source cryptoasset analytics software, and builds crypto analytics solutions to combat crime at scale. Michael holds a PhD in computer science from the University of Innsbruck, where his research focused on Ethereum and blockchain analysis, including smart contract immutability, token system detection, and cryptocurrency forensics.</p>
+      <a href="mailto:michael.froewis@iknaio.com" style="text-decoration: none; margin-right: 10px;">
+        📧 Email
+      </a>
+      <a href="https://www.linkedin.com/in/michael-f-470b37287" target="_blank" style="text-decoration: none;">
+        🔗 LinkedIn
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
       <img src="../assets/images/bio-photo-simon-lobinger.png" alt="Simon Lobinger" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
