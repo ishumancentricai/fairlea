@@ -28,7 +28,7 @@ permalink: /events/
       </div>
       <div class="upcoming-event__detail">
         <dt>Time</dt>
-        <dd>Arrival from <time datetime="2026-10-08T09:30">09:30</time>; programme until <time datetime="2026-10-08T18:15">18:15</time></dd>
+        <dd><time datetime="2026-10-08T09:30">9:30</time>-<time datetime="2026-10-08T18:15">18:15</time></dd>
       </div>
       <div class="upcoming-event__detail">
         <dt>Location</dt>
