@@ -166,6 +166,18 @@ title: "Team"
   </tr>
   <tr>
     <td style="vertical-align: top; width: 150px;">
+      <img src="../assets/images/bio-anna-kannowski" alt="Anna Kannowski" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 20px;">
+      <p><strong>Anna Kannowski</strong></p>
+      <p>Anna Kannowski is a student research assistant at the Chair of Criminal Law, Criminal Procedure and IT Criminal Law of Prof. Dr. Christian Rückert at the University of Bayreuth with a special interest in the use of AI for law enforcement and cryptoasset forensics.</p>
+      <a href="mailto:anna.kannowski@uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
+        📧 Email
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
       <img src="../assets/images/bio-photo-arian-javaheri.jpg" alt="Arian Javaheri" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
