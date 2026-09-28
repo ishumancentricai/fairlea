@@ -109,6 +109,22 @@ title: "Team"
   
   <tr>
     <td style="vertical-align: top; width: 150px;">
+      <img src="../assets/images/bio-photo-jannek-sekowski.jpg" alt="Jannek Sekowski" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 20px;">
+      <p><strong>Jannek Sekowski</strong></p>
+      <p>Jannek Sekowski is a computer scientist, researcher at the Business &amp; Information Systems Engineering branch of Fraunhofer FIT, and a PhD candidate at the Chair of Information Systems and Human-Centric AI at the University of Bayreuth. His research combines machine learning with human-computer interaction and human-centered AI, spanning from end-to-end model development to the design and evaluation of intelligent interactive systems, as well as effective human oversight of high-risk AI systems.</p>
+      <a href="mailto:jannek.sekowski@uni-bayreuth.de" style="text-decoration: none; margin-right: 10px;">
+        📧 Email
+      </a>
+      <a href="https://de.linkedin.com/in/jannek-sekowski" target="_blank" style="text-decoration: none;">
+        🔗 LinkedIn
+      </a>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
       <img src="../assets/images/bio-photo-thomas-niedermayer.jpg" alt="Thomas Niedermayer" style="width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px;">
     </td>
     <td style="vertical-align: top; padding-left: 20px;">
