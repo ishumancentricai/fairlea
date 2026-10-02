@@ -16,7 +16,10 @@ export default defineTeamMember({
   links: [
     { label: 'Email', href: 'mailto:kuehl@uni-bayreuth.de' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/niklaskuehl' },
-    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=79KpdDQAAAAJ' },
+    {
+      label: 'Google Scholar',
+      href: 'https://scholar.google.com/citations?user=79KpdDQAAAAJ',
+    },
   ],
   translations: {
     en: {

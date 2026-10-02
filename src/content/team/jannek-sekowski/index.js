@@ -11,7 +11,10 @@ export default defineTeamMember({
   links: [
     { label: 'Email', href: 'mailto:jannek.sekowski@uni-bayreuth.de' },
     { label: 'LinkedIn', href: 'https://de.linkedin.com/in/jannek-sekowski' },
-    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=rf9UGl8AAAAJ' }
+    {
+      label: 'Google Scholar',
+      href: 'https://scholar.google.com/citations?user=rf9UGl8AAAAJ',
+    },
   ],
   translations: {
     en: {
