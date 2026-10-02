@@ -12,6 +12,10 @@ const messages = Object.freeze({
     legalNavigation: 'Legal navigation',
     homeLabel: 'FAIRLEA home',
     brandName: 'FAIRLEA @ University of Bayreuth',
+    menu: Object.freeze({
+      open: 'Open menu',
+      title: 'Navigation',
+    }),
     home: Object.freeze({
       subtitle:
         'An interdisciplinary investigation in the context of cryptoasset forensics',
@@ -82,6 +86,10 @@ const messages = Object.freeze({
     legalNavigation: 'Rechtliche Navigation',
     homeLabel: 'FAIRLEA-Startseite',
     brandName: 'FAIRLEA @ Universität Bayreuth',
+    menu: Object.freeze({
+      open: 'Menü öffnen',
+      title: 'Navigation',
+    }),
     home: Object.freeze({
       subtitle:
         'Eine interdisziplinäre Untersuchung im Kontext der Kryptoasset-Forensik',

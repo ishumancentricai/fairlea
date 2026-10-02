@@ -27,7 +27,7 @@ export function HeaderNavigation() {
         <TabsList className="h-9 gap-5 px-0" variant="line">
           {navigationRoutes.map((page) => (
             <TabsTrigger
-              className="h-9 flex-none rounded-none px-0.5 text-sm hover:text-[#008557] dark:hover:text-[#008557] data-active:text-[#008557] data-active:after:bg-[#008557] dark:data-active:text-[#008557]"
+              className="h-9 flex-none rounded-none px-0.5 text-sm transition-colors hover:text-[#008557] dark:hover:text-[#008557] data-active:text-[#008557] data-active:after:bg-[#008557] dark:data-active:text-[#008557]"
               key={page.id}
               render={<NavLink end to={localizedPath(locale, page.id)} />}
               value={page.id}

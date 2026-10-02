@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/tooltip'
 import { Toggle } from '@/components/ui/toggle'
 
-export function SiteSettings() {
+export function SiteSettings({ onNavigate }) {
   const { locale, messages } = useLocale()
   const { resolvedTheme, setTheme } = useTheme()
   const { openSearch } = useSearch()
@@ -41,10 +41,16 @@ export function SiteSettings() {
     navigate(
       `${switchLocalePath(location.pathname, nextLocale)}${location.search}${location.hash}`,
     )
+    onNavigate?.()
   }
 
   function toggleTheme() {
     setTheme(isDark ? 'light' : 'dark')
+  }
+
+  function handleSearch() {
+    onNavigate?.()
+    openSearch()
   }
 
   return (
@@ -107,7 +113,7 @@ export function SiteSettings() {
             render={
               <Button
                 aria-label={messages.search.open}
-                onClick={openSearch}
+                onClick={handleSearch}
                 size="icon"
                 variant="ghost"
               />
