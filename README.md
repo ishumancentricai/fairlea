@@ -34,26 +34,123 @@ npm run dev
 
 ## Architecture
 
-- `site.config.js` is the source of truth for site metadata, navigation,
-  canonical URLs, prerender paths, and sitemap entries.
+- `site.config.js` is the source of truth for locales, site metadata,
+  navigation, canonical URLs, legacy redirects, prerender paths, and sitemap
+  entries.
 - `src/routes.js` maps the route manifest to React Router route modules.
 - `src/root.jsx` provides the document shell, global layout, and root error
-  boundary.
+  boundary. Its early bootstrap applies the saved theme and resolves `/` to a
+  language before hydration.
 - `src/content/pages/` holds long-form MDX content.
-- `src/content/data/` holds structured JavaScript collections for team members,
-  events, and publications.
+- `src/content/data/` validates and collects structured team, event, and
+  research entries.
 - `scripts/finalize-static-build.js` creates Pages-specific output and verifies
   that every public route was generated.
 
-The route manifest uses canonical trailing-slash URLs. When adding a public
-page, update the manifest and add its route module. Prerendering and the sitemap
-then update from the same definition.
+Every canonical page is generated below `/en/` and `/de/` with trailing-slash
+URLs. The language switch keeps the current route, query, and fragment. The URL
+is the source of truth; `fairlea:locale` is only used when resolving `/`.
+
+The appearance setting supports `system`, `light`, and `dark`. It is stored in
+`fairlea:theme`; `system` follows live operating-system color-scheme changes.
 
 ## Content
 
-Use MDX for long-form editorial pages. Shared renderers in
-`src/components/mdx/` provide consistent and accessible markup. Use the JSDoc
-contracts in `src/content/data/collections.js` for structured collections.
+Use paired `.en.mdx` and `.de.mdx` files for long-form editorial pages. Shared
+renderers in `src/components/mdx/` provide consistent and accessible markup.
+
+Team members, events, and research entries live in individual directories:
+
+```text
+src/content/team/christian-rueckert/index.js
+src/content/events/project-meeting-2026/index.js
+src/content/research/example-publication/index.js
+```
+
+The collections discover every `index.js` automatically. IDs must be unique,
+both translations are mandatory for translatable fields, and validation errors
+fail the production build.
+
+### Team member
+
+```js
+import { defineTeamMember } from '../../data/schema.js'
+
+export default defineTeamMember({
+  id: 'example-person',
+  name: 'Example Person',
+  image: { src: '/assets/images/example-person.jpg' },
+  order: 10,
+  links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/' }],
+  translations: {
+    en: { role: 'Researcher', biography: 'English biography.' },
+    de: { role: 'Wissenschaftlerin', biography: 'Deutsche Biografie.' },
+  },
+})
+```
+
+### Event
+
+```js
+import { defineEvent } from '../../data/schema.js'
+
+export default defineEvent({
+  id: 'example-event',
+  startDate: '2027-03-10T09:00:00+01:00',
+  endDate: '2027-03-10T17:00:00+01:00',
+  timeZone: 'Europe/Berlin',
+  order: 10,
+  images: [],
+  links: [
+    {
+      href: 'https://example.com/',
+      translations: {
+        en: { label: 'Further information' },
+        de: { label: 'Weitere Informationen' },
+      },
+    },
+  ],
+  translations: {
+    en: { title: 'Example event', location: 'Bayreuth', summary: 'Summary.' },
+    de: {
+      title: 'Beispielveranstaltung',
+      location: 'Bayreuth',
+      summary: 'Zusammenfassung.',
+    },
+  },
+})
+```
+
+Date-only values use `YYYY-MM-DD`; date-times require an explicit UTC offset.
+The renderer formats them with `en-GB` or `de-DE` and the configured IANA time
+zone.
+
+### Research entry
+
+```js
+import { defineResearchEntry } from '../../data/schema.js'
+
+export default defineResearchEntry({
+  id: 'example-publication',
+  citation: 'Author (2027): Original publication title.',
+  href: 'https://doi.org/example',
+  year: 2027,
+  order: 10,
+  category: 'project',
+  translations: {
+    en: { summary: 'English contextual summary.' },
+    de: { summary: 'Deutsche Einordnung.' },
+  },
+})
+```
+
+Bibliographic citations remain in their published language. The optional
+contextual summary must be supplied in both languages when used.
+
+For a long, formatted biography, event description, or research explanation,
+add `body.en.mdx` and `body.de.mdx` next to the entry's `index.js`. Both files
+are required as a pair and replace the short text when rendered. Content files
+never define layout JSX; shared React components own the presentation.
 
 Repository content is trusted at build time. Do not accept or compile arbitrary
 user-provided MDX.

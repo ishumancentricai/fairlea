@@ -22,6 +22,7 @@ export default defineConfig([
     files: [
       'src/components/ui/**/*.{js,jsx}',
       'src/components/mdx/**/*.{js,jsx}',
+      'src/components/providers/**/*.{js,jsx}',
       'src/root.jsx',
       'src/routes/**/*.{js,jsx}',
     ],

@@ -1,7 +1,9 @@
-import { getPageRoute } from '../../../site.config.js'
+import { getPageTranslation } from '../../../site.config.js'
+import { useLocale } from '@/components/providers/locale-provider'
 
 export function PageShell({ children, pageId }) {
-  const page = getPageRoute(pageId)
+  const { locale } = useLocale()
+  const page = getPageTranslation(pageId, locale)
 
   return (
     <article className="mx-auto w-full max-w-4xl px-6 py-14 sm:py-20">
