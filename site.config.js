@@ -127,24 +127,6 @@ export const pageRoutes = Object.freeze([
     },
   },
   {
-    id: 'news',
-    segment: 'news',
-    file: './routes/news.jsx',
-    indexable: true,
-    navigation: false,
-    footer: false,
-    translations: {
-      en: {
-        title: 'News',
-        description: 'News from the FAIRLEA research project.',
-      },
-      de: {
-        title: 'Neuigkeiten',
-        description: 'Neuigkeiten aus dem Forschungsprojekt FAIRLEA.',
-      },
-    },
-  },
-  {
     id: 'imprint',
     segment: 'impressum',
     file: './routes/imprint.jsx',
@@ -187,7 +169,6 @@ export const legacyRedirects = Object.freeze([
   { path: '/events/', pageId: 'events', locale: 'en' },
   { path: '/research/', pageId: 'research', locale: 'en' },
   { path: '/team/', pageId: 'team', locale: 'en' },
-  { path: '/news/', pageId: 'news', locale: 'en' },
   { path: '/impressum/', pageId: 'imprint', locale: 'de' },
   { path: '/datenschutz/', pageId: 'privacy', locale: 'de' },
 ])

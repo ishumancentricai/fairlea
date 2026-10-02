@@ -35,6 +35,13 @@ export const mdxComponents = {
   p: (props) => (
     <p className="mt-5 leading-7 text-muted-foreground" {...props} />
   ),
+  blockquote: (props) => (
+    <blockquote
+      className="my-6 border-l-4 border-primary pl-4 font-medium"
+      {...props}
+    />
+  ),
+  hr: (props) => <hr className="my-10 border-border" {...props} />,
   ul: (props) => <ul className="my-5 list-disc space-y-2 pl-6" {...props} />,
   ol: (props) => <ol className="my-5 list-decimal space-y-2 pl-6" {...props} />,
   table: (props) => (

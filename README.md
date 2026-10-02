@@ -41,7 +41,8 @@ npm run dev
 - `src/root.jsx` provides the document shell, global layout, and root error
   boundary. Its early bootstrap applies the saved theme and resolves `/` to a
   language before hydration.
-- `src/content/pages/` holds long-form MDX content.
+- `src/content/pages/` holds automatically discovered, paired long-form MDX
+  content. Home and About both render the same `project-overview` pair.
 - `src/content/data/` validates and collects structured team, event, and
   research entries.
 - `scripts/finalize-static-build.js` creates Pages-specific output and verifies
@@ -58,6 +59,13 @@ The appearance setting supports `system`, `light`, and `dark`. It is stored in
 
 Use paired `.en.mdx` and `.de.mdx` files for long-form editorial pages. Shared
 renderers in `src/components/mdx/` provide consistent and accessible markup.
+The build fails if either language is missing. Migration-specific editorial
+follow-ups are tracked in `CONTENT_REVIEW.md`.
+
+Global branding belongs in `public/` when it needs a stable URL (for example
+the favicon) or in `src/assets/brand/` when it is imported by a component.
+Entity-specific images live beside the entity's `index.js` and are imported so
+Vite can validate and fingerprint them.
 
 Team members, events, and research entries live in individual directories:
 
@@ -74,24 +82,35 @@ fail the production build.
 ### Team member
 
 ```js
+import portrait from './portrait.jpg'
 import { defineTeamMember } from '../../data/schema.js'
 
 export default defineTeamMember({
   id: 'example-person',
   name: 'Example Person',
-  image: { src: '/assets/images/example-person.jpg' },
+  image: {
+    src: portrait,
+    alt: 'Example Person',
+    width: 1200,
+    height: 1600,
+  },
   order: 10,
   links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/' }],
   translations: {
-    en: { role: 'Researcher', biography: 'English biography.' },
-    de: { role: 'Wissenschaftlerin', biography: 'Deutsche Biografie.' },
+    en: { role: 'Researcher', biography: ['English biography.'] },
+    de: { role: 'Wissenschaftlerin', biography: ['Deutsche Biografie.'] },
   },
 })
 ```
 
+`role` is optional. If supplied, it is required in both languages. Biography
+paragraphs are always arrays and must contain at least one non-empty paragraph
+per language.
+
 ### Event
 
 ```js
+import photo from './photo-01.jpg'
 import { defineEvent } from '../../data/schema.js'
 
 export default defineEvent({
@@ -100,7 +119,18 @@ export default defineEvent({
   endDate: '2027-03-10T17:00:00+01:00',
   timeZone: 'Europe/Berlin',
   order: 10,
-  images: [],
+  images: [
+    {
+      src: photo,
+      width: 1600,
+      height: 900,
+      kind: 'photo',
+      translations: {
+        en: { alt: 'English description' },
+        de: { alt: 'Deutsche Beschreibung' },
+      },
+    },
+  ],
   links: [
     {
       href: 'https://example.com/',
@@ -123,7 +153,9 @@ export default defineEvent({
 
 Date-only values use `YYYY-MM-DD`; date-times require an explicit UTC offset.
 The renderer formats them with `en-GB` or `de-DE` and the configured IANA time
-zone.
+zone. `summary` is optional; when present it is required in both languages.
+Use `kind: 'poster'` for prominent event artwork and `kind: 'photo'` for the
+gallery.
 
 ### Research entry
 

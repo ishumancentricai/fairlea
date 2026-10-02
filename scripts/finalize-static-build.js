@@ -92,6 +92,7 @@ const expectedFiles = [
   ...legacyRedirects.map((redirect) => routeOutputPath(redirect.path)),
   path.join(outputDirectory, '404.html'),
   path.join(outputDirectory, 'CNAME'),
+  path.join(outputDirectory, 'fairlea-icon.png'),
   path.join(outputDirectory, 'robots.txt'),
   path.join(outputDirectory, 'sitemap.xml'),
 ]
@@ -172,5 +173,5 @@ if (
 }
 
 console.log(
-  `Static output verified: ${localizedPageRoutes.length} localized routes, ${legacyRedirects.length} redirects, and Pages metadata.`,
+  `Static output verified: ${localizedPageRoutes.length} localized routes, ${legacyRedirects.length} redirects, branding, and Pages metadata.`,
 )

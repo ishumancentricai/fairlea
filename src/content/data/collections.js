@@ -74,3 +74,52 @@ export const researchEntries = Object.freeze(
       left.id.localeCompare(right.id),
   ),
 )
+
+const expectedIds = Object.freeze({
+  team: [
+    'christian-rueckert',
+    'niklas-kuehl',
+    'bernhard-haslhofer',
+    'thomas-goger',
+    'jana-elsner',
+    'leopold-mueller',
+    'jannek-sekowski',
+    'thomas-niedermayer',
+    'michael-froewis',
+    'simon-lobinger',
+    'sophia-schuetz',
+    'anna-kannowski',
+    'arian-javaheri',
+  ],
+  events: [
+    'crypto-crime-2026',
+    'second-project-meeting-2026',
+    'first-project-meeting-2025',
+    'kick-off-event-2025',
+  ],
+  research: [
+    'multi-input-heuristic-2026',
+    'generative-ai-provider-liability-2026',
+    'biometric-remote-identification-2026',
+    'vermoegensarrest-kryptodiebstahl-2025',
+    'koalitionsvertrag-it-strafrecht-2025',
+    'fairness-benefits-xai-2024',
+    'ki-als-beweismittel-2023',
+    'cryptocurrency-deanonymizations-2022',
+    'evidential-value-crypto-investigations-2020',
+  ],
+})
+
+function assertCollection(name, entries) {
+  const ids = entries.map((entry) => entry.id)
+
+  if (JSON.stringify(ids) !== JSON.stringify(expectedIds[name])) {
+    throw new Error(
+      `${name}: expected ordered ids ${expectedIds[name].join(', ')}, received ${ids.join(', ')}`,
+    )
+  }
+}
+
+assertCollection('team', teamMembers)
+assertCollection('events', events)
+assertCollection('research', researchEntries)

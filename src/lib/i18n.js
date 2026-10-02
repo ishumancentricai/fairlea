@@ -11,6 +11,11 @@ const messages = Object.freeze({
     primaryNavigation: 'Primary navigation',
     legalNavigation: 'Legal navigation',
     homeLabel: 'FAIRLEA home',
+    home: Object.freeze({
+      subtitle:
+        'An interdisciplinary investigation in the context of cryptoasset forensics',
+      logoAlt: 'FAIRLEA logo',
+    }),
     language: Object.freeze({
       label: 'Change language',
       en: 'English',
@@ -44,6 +49,11 @@ const messages = Object.freeze({
     primaryNavigation: 'Hauptnavigation',
     legalNavigation: 'Rechtliche Navigation',
     homeLabel: 'FAIRLEA-Startseite',
+    home: Object.freeze({
+      subtitle:
+        'Eine interdisziplinäre Untersuchung im Kontext der Kryptoasset-Forensik',
+      logoAlt: 'FAIRLEA-Logo',
+    }),
     language: Object.freeze({
       label: 'Sprache ändern',
       en: 'Englisch',

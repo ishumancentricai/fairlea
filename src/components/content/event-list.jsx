@@ -17,9 +17,38 @@ export function EventList() {
       {events.map((event) => {
         const translation = event.translations[locale]
         const Body = event.body?.[locale]
+        const posters = event.images.filter((image) => image.kind === 'poster')
+        const photos = event.images.filter((image) => image.kind === 'photo')
+
+        const renderImage = (image, prominent = false) => {
+          const imageText = image.translations[locale]
+
+          return (
+            <figure key={image.src}>
+              <img
+                alt={imageText.alt}
+                className={
+                  prominent
+                    ? 'w-full rounded-xl object-contain'
+                    : 'w-full rounded-xl object-cover'
+                }
+                height={image.height}
+                loading="lazy"
+                src={image.src}
+                width={image.width}
+              />
+              {imageText.caption ? (
+                <figcaption className="mt-2 text-sm text-muted-foreground">
+                  {imageText.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          )
+        }
 
         return (
           <article className="space-y-5" key={event.id}>
+            {posters.map((image) => renderImage(image, true))}
             <header>
               <h2 className="text-2xl font-semibold tracking-tight">
                 {translation.title}
@@ -48,32 +77,14 @@ export function EventList() {
             </header>
             {Body ? (
               <Body components={mdxComponents} />
-            ) : (
+            ) : translation.summary ? (
               <p className="leading-7 text-muted-foreground">
                 {translation.summary}
               </p>
-            )}
-            {event.images.length > 0 ? (
+            ) : null}
+            {photos.length > 0 ? (
               <div className="grid gap-4 sm:grid-cols-2">
-                {event.images.map((image) => {
-                  const imageText = image.translations[locale]
-
-                  return (
-                    <figure key={image.src}>
-                      <img
-                        alt={imageText.alt}
-                        className="w-full rounded-xl object-cover"
-                        loading="lazy"
-                        src={image.src}
-                      />
-                      {imageText.caption ? (
-                        <figcaption className="mt-2 text-sm text-muted-foreground">
-                          {imageText.caption}
-                        </figcaption>
-                      ) : null}
-                    </figure>
-                  )
-                })}
+                {photos.map((image) => renderImage(image))}
               </div>
             ) : null}
             {event.links.length > 0 ? (

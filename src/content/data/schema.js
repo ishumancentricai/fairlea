@@ -2,15 +2,15 @@ import { supportedLocales } from '../../../site.config.js'
 
 /**
  * @typedef {object} LocalizedTeamMember
- * @property {string} role
- * @property {string} biography
+ * @property {string} [role]
+ * @property {readonly string[]} biography
  */
 
 /**
  * @typedef {object} TeamMember
  * @property {string} id
  * @property {string} name
- * @property {{src: string, alt?: string}} image
+ * @property {{src: string, alt: string, width: number, height: number}} image
  * @property {number} order
  * @property {readonly {label: string, href: string}[]} links
  * @property {Readonly<Record<'en' | 'de', LocalizedTeamMember>>} translations
@@ -20,7 +20,7 @@ import { supportedLocales } from '../../../site.config.js'
  * @typedef {object} LocalizedEvent
  * @property {string} title
  * @property {string} location
- * @property {string} summary
+ * @property {string} [summary]
  */
 
 /**
@@ -30,7 +30,7 @@ import { supportedLocales } from '../../../site.config.js'
  * @property {string} [endDate] ISO 8601 date or date-time with offset.
  * @property {string} timeZone IANA time zone.
  * @property {number} order
- * @property {readonly {src: string, translations: Record<'en' | 'de', {alt: string, caption?: string}>}[]} images
+ * @property {readonly {src: string, width: number, height: number, kind: 'poster' | 'photo', translations: Record<'en' | 'de', {alt: string, caption?: string}>}[]} images
  * @property {readonly {href: string, translations: Record<'en' | 'de', {label: string}>}[]} links
  * @property {Readonly<Record<'en' | 'de', LocalizedEvent>>} translations
  */
@@ -64,6 +64,24 @@ function assertString(value, field, id) {
 
 function assertOrder(value, id) {
   assert(Number.isFinite(value), `${id}: order must be a finite number`)
+}
+
+function assertPositiveInteger(value, field, id) {
+  assert(
+    Number.isInteger(value) && value > 0,
+    `${id}: ${field} must be a positive integer`,
+  )
+}
+
+function assertStringArray(value, field, id) {
+  assert(
+    Array.isArray(value) && value.length > 0,
+    `${id}: ${field} is required`,
+  )
+
+  for (const [index, item] of value.entries()) {
+    assertString(item, `${field}[${index}]`, id)
+  }
 }
 
 function assertId(entry, type) {
@@ -126,9 +144,33 @@ export function defineTeamMember(entry) {
   assertId(entry, 'team member')
   assertString(entry.name, 'name', entry.id)
   assertString(entry.image?.src, 'image.src', entry.id)
+  assertString(entry.image?.alt, 'image.alt', entry.id)
+  assertPositiveInteger(entry.image?.width, 'image.width', entry.id)
+  assertPositiveInteger(entry.image?.height, 'image.height', entry.id)
   assertOrder(entry.order, entry.id)
   assertLinks(entry.links, entry.id)
-  assertLocalized(entry.translations, ['role', 'biography'], entry.id)
+  assertLocalized(entry.translations, [], entry.id)
+
+  const hasRole = supportedLocales.some(
+    (locale) => entry.translations[locale].role !== undefined,
+  )
+
+  for (const locale of supportedLocales) {
+    if (hasRole) {
+      assertString(
+        entry.translations[locale].role,
+        `translations.${locale}.role`,
+        entry.id,
+      )
+    }
+
+    assertStringArray(
+      entry.translations[locale].biography,
+      `translations.${locale}.biography`,
+      entry.id,
+    )
+  }
+
   return deepFreeze(entry)
 }
 
@@ -152,16 +194,30 @@ export function defineEvent(entry) {
     throw new Error(`${entry.id}: timeZone must be a valid IANA time zone`)
   }
   assertOrder(entry.order, entry.id)
-  assertLocalized(
-    entry.translations,
-    ['title', 'location', 'summary'],
-    entry.id,
+  assertLocalized(entry.translations, ['title', 'location'], entry.id)
+
+  const hasSummary = supportedLocales.some(
+    (locale) => entry.translations[locale].summary !== undefined,
   )
+
+  if (hasSummary) {
+    assertLocalized(
+      entry.translations,
+      ['title', 'location', 'summary'],
+      entry.id,
+    )
+  }
   assertLinks(entry.links, entry.id, true)
   assert(Array.isArray(entry.images), `${entry.id}: images must be an array`)
 
   for (const [index, image] of entry.images.entries()) {
     assertString(image.src, `images[${index}].src`, entry.id)
+    assertPositiveInteger(image.width, `images[${index}].width`, entry.id)
+    assertPositiveInteger(image.height, `images[${index}].height`, entry.id)
+    assert(
+      ['poster', 'photo'].includes(image.kind),
+      `${entry.id}: images[${index}].kind must be poster or photo`,
+    )
     assertLocalized(image.translations, ['alt'], entry.id)
 
     if (

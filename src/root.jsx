@@ -32,7 +32,8 @@ export function Layout({ children }) {
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script dangerouslySetInnerHTML={{ __html: documentBootstrap }} />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/fairlea-icon.png" rel="icon" type="image/png" />
+        <link href="/fairlea-icon.png" rel="apple-touch-icon" />
         <Meta />
         <Links />
       </head>

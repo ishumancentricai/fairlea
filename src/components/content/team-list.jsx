@@ -23,22 +23,33 @@ export function TeamList() {
             <img
               alt={member.image.alt ?? member.name}
               className="aspect-square w-40 rounded-xl object-cover object-top"
+              height={member.image.height}
               loading="lazy"
               src={member.image.src}
+              width={member.image.width}
             />
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">
                 {member.name}
               </h2>
-              <p className="mt-1 font-medium text-muted-foreground">
-                {translation.role}
-              </p>
+              {translation.role ? (
+                <p className="mt-1 font-medium text-muted-foreground">
+                  {translation.role}
+                </p>
+              ) : null}
               {Body ? (
                 <Body components={mdxComponents} />
               ) : (
-                <p className="mt-4 leading-7 text-muted-foreground">
-                  {translation.biography}
-                </p>
+                <div className="mt-4 space-y-4">
+                  {translation.biography.map((paragraph) => (
+                    <p
+                      className="leading-7 text-muted-foreground"
+                      key={paragraph}
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               )}
               {member.links.length > 0 ? (
                 <ul className="mt-5 flex flex-wrap gap-4 text-sm font-medium">
