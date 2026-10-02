@@ -1,78 +1,35 @@
-import { Menu } from '@base-ui/react/menu'
-import { Check, ChevronDown, Globe2, Monitor, Moon, Sun } from 'lucide-react'
+import { ChevronDown, Globe2, Moon, Sun } from 'lucide-react'
 import { useLocation, useNavigate } from 'react-router'
 
 import { switchLocalePath } from '../../../site.config.js'
 import { useLocale } from '@/components/providers/locale-provider'
 import { useTheme } from '@/components/providers/theme-provider'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
-
-const itemClassName =
-  'flex cursor-default items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground'
-
-function SettingsMenu({
-  accessibleLabel,
-  options,
-  triggerContent,
-  value,
-  onValueChange,
-}) {
-  return (
-    <Menu.Root>
-      <Menu.Trigger
-        aria-label={accessibleLabel}
-        render={<Button size="sm" variant="outline" />}
-      >
-        {triggerContent}
-        <ChevronDown aria-hidden="true" data-icon="inline-end" />
-      </Menu.Trigger>
-      <Menu.Portal>
-        <Menu.Positioner align="end" className="z-50" sideOffset={6}>
-          <Menu.Popup className="min-w-40 rounded-lg border bg-popover p-1 text-popover-foreground shadow-md outline-none">
-            <Menu.RadioGroup onValueChange={onValueChange} value={value}>
-              {options.map((option) => {
-                const Icon = option.icon
-
-                return (
-                  <Menu.RadioItem
-                    className={cn(itemClassName, 'pr-8')}
-                    closeOnClick
-                    key={option.value}
-                    value={option.value}
-                  >
-                    <Icon aria-hidden="true" />
-                    <span>{option.label}</span>
-                    <Menu.RadioItemIndicator className="ml-auto">
-                      <Check aria-hidden="true" />
-                    </Menu.RadioItemIndicator>
-                  </Menu.RadioItem>
-                )
-              })}
-            </Menu.RadioGroup>
-          </Menu.Popup>
-        </Menu.Positioner>
-      </Menu.Portal>
-    </Menu.Root>
-  )
-}
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Separator } from '@/components/ui/separator'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+import { Toggle } from '@/components/ui/toggle'
 
 export function SiteSettings() {
   const { locale, messages } = useLocale()
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const location = useLocation()
   const navigate = useNavigate()
-  const ThemeIcon = { system: Monitor, light: Sun, dark: Moon }[theme]
-
-  const languageOptions = [
-    { value: 'en', label: messages.language.en, icon: Globe2 },
-    { value: 'de', label: messages.language.de, icon: Globe2 },
-  ]
-  const themeOptions = [
-    { value: 'system', label: messages.theme.system, icon: Monitor },
-    { value: 'light', label: messages.theme.light, icon: Sun },
-    { value: 'dark', label: messages.theme.dark, icon: Moon },
-  ]
+  const isDark = resolvedTheme === 'dark'
+  const themeLabel = isDark
+    ? messages.theme.switchToLight
+    : messages.theme.switchToDark
 
   function changeLocale(nextLocale) {
     if (nextLocale === locale) {
@@ -84,32 +41,63 @@ export function SiteSettings() {
     )
   }
 
+  function toggleTheme() {
+    setTheme(isDark ? 'light' : 'dark')
+  }
+
   return (
-    <div className="flex items-center gap-2">
-      <SettingsMenu
-        accessibleLabel={messages.language.label}
-        onValueChange={changeLocale}
-        options={languageOptions}
-        triggerContent={
-          <>
-            <Globe2 aria-hidden="true" data-icon="inline-start" />
-            <span>{locale.toUpperCase()}</span>
-          </>
-        }
-        value={locale}
-      />
-      <SettingsMenu
-        accessibleLabel={messages.theme.label}
-        onValueChange={setTheme}
-        options={themeOptions}
-        triggerContent={
-          <>
-            <ThemeIcon aria-hidden="true" data-icon="inline-start" />
-            <span className="sr-only">{messages.theme[theme]}</span>
-          </>
-        }
-        value={theme}
-      />
-    </div>
+    <TooltipProvider delay={350}>
+      <div className="flex shrink-0 items-center gap-2">
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Toggle
+                aria-label={themeLabel}
+                onPressedChange={toggleTheme}
+                pressed={isDark}
+                variant="outline"
+              />
+            }
+          >
+            {isDark ? <Moon aria-hidden="true" /> : <Sun aria-hidden="true" />}
+          </TooltipTrigger>
+          <TooltipContent side="bottom">{themeLabel}</TooltipContent>
+        </Tooltip>
+
+        <Separator className="h-7" orientation="vertical" />
+
+        <DropdownMenu>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <DropdownMenuTrigger
+                  aria-label={messages.language.label}
+                  render={<Button variant="ghost" />}
+                />
+              }
+            >
+              <Globe2 aria-hidden="true" data-icon="inline-start" />
+              <span>{locale.toUpperCase()}</span>
+              <ChevronDown aria-hidden="true" data-icon="inline-end" />
+            </TooltipTrigger>
+            <TooltipContent side="bottom">
+              {messages.language.label}
+            </TooltipContent>
+          </Tooltip>
+          <DropdownMenuContent align="end" className="min-w-40" sideOffset={8}>
+            <DropdownMenuRadioGroup onValueChange={changeLocale} value={locale}>
+              <DropdownMenuRadioItem closeOnClick value="en">
+                <Globe2 aria-hidden="true" />
+                {messages.language.en}
+              </DropdownMenuRadioItem>
+              <DropdownMenuRadioItem closeOnClick value="de">
+                <Globe2 aria-hidden="true" />
+                {messages.language.de}
+              </DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </TooltipProvider>
   )
 }

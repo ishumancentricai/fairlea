@@ -27,6 +27,16 @@ const messages = Object.freeze({
       system: 'System',
       light: 'Light',
       dark: 'Dark',
+      switchToLight: 'Switch to light mode',
+      switchToDark: 'Switch to dark mode',
+    }),
+    dialog: Object.freeze({ close: 'Close' }),
+    gallery: Object.freeze({
+      description: 'Image gallery for {title}',
+      openImage: 'Open image {index} of {count} from {title}',
+      previous: 'Previous image',
+      next: 'Next image',
+      position: 'Image {current} of {count}',
     }),
     notFound: Object.freeze({
       eyebrow: 'Error 404',
@@ -43,7 +53,11 @@ const messages = Object.freeze({
       project: 'Project publication',
       related: 'Related work',
     }),
-    team: Object.freeze({ former: 'Former team members' }),
+    team: Object.freeze({
+      former: 'Former team members',
+      openProfile: 'Highlight profile for {name}',
+      profileDescription: 'Profile of {name}',
+    }),
     event: Object.freeze({ date: 'Date', location: 'Location' }),
   }),
   de: Object.freeze({
@@ -67,6 +81,16 @@ const messages = Object.freeze({
       system: 'System',
       light: 'Hell',
       dark: 'Dunkel',
+      switchToLight: 'Zum hellen Design wechseln',
+      switchToDark: 'Zum dunklen Design wechseln',
+    }),
+    dialog: Object.freeze({ close: 'Schließen' }),
+    gallery: Object.freeze({
+      description: 'Bildergalerie für {title}',
+      openImage: 'Bild {index} von {count} der Veranstaltung {title} öffnen',
+      previous: 'Vorheriges Bild',
+      next: 'Nächstes Bild',
+      position: 'Bild {current} von {count}',
     }),
     notFound: Object.freeze({
       eyebrow: 'Fehler 404',
@@ -85,7 +109,11 @@ const messages = Object.freeze({
       project: 'Projektpublikation',
       related: 'Verwandte Forschung',
     }),
-    team: Object.freeze({ former: 'Ehemalige Teammitglieder' }),
+    team: Object.freeze({
+      former: 'Ehemalige Teammitglieder',
+      openProfile: 'Profil von {name} hervorheben',
+      profileDescription: 'Profil von {name}',
+    }),
     event: Object.freeze({ date: 'Datum', location: 'Ort' }),
   }),
 })
@@ -129,6 +157,17 @@ for (const locale of supportedLocales) {
 
 export function getMessages(locale) {
   return messages[isLocale(locale) ? locale : defaultLocale]
+}
+
+/**
+ * @param {string} template
+ * @param {Record<string, string | number>} values
+ */
+export function formatMessage(template, values) {
+  return Object.entries(values).reduce(
+    (message, [name, value]) => message.replaceAll(`{${name}}`, String(value)),
+    template,
+  )
 }
 
 export function getDocumentLocale(pathname) {
