@@ -75,9 +75,11 @@ src/content/events/project-meeting-2026/index.js
 src/content/research/example-publication/index.js
 ```
 
-The collections discover every `index.js` automatically. IDs must be unique,
-both translations are mandatory for translatable fields, and validation errors
-fail the production build.
+The collections discover every `index.js` automatically; no central ID list is
+maintained. Each local ID must still be unique, both translations are mandatory
+for translatable fields, and validation errors fail the production build. Set
+`visible: false` to keep a complete draft in the repository without rendering
+it on the website.
 
 ### Team member
 
@@ -94,6 +96,8 @@ export default defineTeamMember({
     width: 1200,
     height: 1600,
   },
+  visible: true,
+  former: false,
   order: 10,
   links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/' }],
   translations: {
@@ -105,7 +109,9 @@ export default defineTeamMember({
 
 `role` is optional. If supplied, it is required in both languages. Biography
 paragraphs are always arrays and must contain at least one non-empty paragraph
-per language.
+per language. Current and former team members are rendered in separate groups;
+`order` must be unique among the visible entries within the respective group.
+Former members always appear in the final, localized section.
 
 ### Event
 
@@ -118,7 +124,7 @@ export default defineEvent({
   startDate: '2027-03-10T09:00:00+01:00',
   endDate: '2027-03-10T17:00:00+01:00',
   timeZone: 'Europe/Berlin',
-  order: 10,
+  visible: true,
   images: [
     {
       src: photo,
@@ -155,7 +161,8 @@ Date-only values use `YYYY-MM-DD`; date-times require an explicit UTC offset.
 The renderer formats them with `en-GB` or `de-DE` and the configured IANA time
 zone. `summary` is optional; when present it is required in both languages.
 Use `kind: 'poster'` for prominent event artwork and `kind: 'photo'` for the
-gallery.
+gallery. Events are sorted automatically by `startDate`, newest first, so they
+do not have a manually maintained `order` field.
 
 ### Research entry
 
@@ -167,6 +174,7 @@ export default defineResearchEntry({
   citation: 'Author (2027): Original publication title.',
   href: 'https://doi.org/example',
   year: 2027,
+  visible: true,
   order: 10,
   category: 'project',
   translations: {
@@ -177,7 +185,10 @@ export default defineResearchEntry({
 ```
 
 Bibliographic citations remain in their published language. The optional
-contextual summary must be supplied in both languages when used.
+contextual summary must be supplied in both languages when used. Research is
+grouped by `category`, sorted by year in descending order, and then by `order`.
+For visible entries, `order` must be unique only within the same category and
+year, so a new publication year can start at `1` again.
 
 For a long, formatted biography, event description, or research explanation,
 add `body.en.mdx` and `body.de.mdx` next to the entry's `index.js`. Both files
