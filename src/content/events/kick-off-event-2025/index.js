@@ -5,7 +5,7 @@ export default defineEvent({
   startDate: '2025-07-23',
   endDate: '2025-07-24',
   timeZone: 'Europe/Berlin',
-  order: 4,
+  visible: true,
   images: [],
   links: [],
   translations: {

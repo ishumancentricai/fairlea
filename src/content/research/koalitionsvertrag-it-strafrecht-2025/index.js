@@ -6,6 +6,7 @@ export default defineResearchEntry({
     'Elsner, J., Meinen, L., Rückert, C., KriPoZ 2025, 269ff. Mehr Sicherheit durch Strafverfolgung? Der Koalitionsvertrag im Lichte des IT-Strafrechts.',
   href: 'https://kripoz.de/wp-content/uploads/2025/09/elsner-meinen-rueckert-koalitionsvertrag-im-lichte-des-it-strafrechts.pdf',
   year: 2025,
-  order: 5,
+  visible: true,
+  order: 2,
   category: 'project',
 })

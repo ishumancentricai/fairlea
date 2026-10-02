@@ -5,6 +5,8 @@ export default defineTeamMember({
   id: 'arian-javaheri',
   name: 'Arian Javaheri',
   image: { src: portrait, alt: 'Arian Javaheri', width: 1080, height: 998 },
+  visible: true,
+  former: false,
   order: 13,
   links: [
     { label: 'Email', href: 'mailto:arian.javaheri@uni-bayreuth.de' },

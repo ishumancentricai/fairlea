@@ -5,6 +5,8 @@ export default defineTeamMember({
   id: 'sophia-schuetz',
   name: 'Sophia Schütz',
   image: { src: portrait, alt: 'Sophia Schütz', width: 480, height: 640 },
+  visible: true,
+  former: false,
   order: 11,
   links: [{ label: 'Email', href: 'mailto:sophia.schuetz@uni-bayreuth.de' }],
   translations: {

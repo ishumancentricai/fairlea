@@ -10,6 +10,8 @@ export default defineTeamMember({
     width: 1500,
     height: 1500,
   },
+  visible: true,
+  former: false,
   order: 8,
   links: [
     { label: 'Email', href: 'mailto:thomas.niedermayer@iknaio.io' },

@@ -5,10 +5,15 @@ export default defineTeamMember({
   id: 'thomas-goger',
   name: 'Thomas Goger',
   image: { src: portrait, alt: 'Thomas Goger', width: 2012, height: 2002 },
+  visible: true,
+  former: false,
   order: 4,
   links: [
     { label: 'Email', href: 'mailto:pressestelle@gensta-ba.bayern.de' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/thomas-goger-134342353' },
+    {
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/thomas-goger-134342353',
+    },
   ],
   translations: {
     en: {
@@ -18,7 +23,7 @@ export default defineTeamMember({
     },
     de: {
       biography: [
-        'Thomas Goger ist Leitender Oberstaatsanwalt und seit der Gründung im Jahr 2015 stellvertretender Leiter der Zentralstelle Cybercrime Bayern. Diese Behörde mit derzeit 30 Staatsanwältinnen und Staatsanwälten sowie mehreren unterstützenden IT-Fachkräften ist eine der größten spezialisierten Einheiten Europas für die Verfolgung bedeutender Cybercrime-Fälle. Zu Beginn seiner Laufbahn war Thomas Goger als Staatsanwalt und Amtsrichter tätig. Er wurde von Ministerien und Parlamenten wiederholt als Berater zu verschiedenen Themen der Cyberkriminalität hinzugezogen. Im Jahr 2016 war er für einige Monate an den INTERPOL Global Complex for Innovation in Singapur abgeordnet. Seither tritt er als Redner und Moderator bei zahlreichen internationalen Veranstaltungen auf. Er ist Autor diverser Beiträge in juristischen Fachzeitschriften zur Vermögensabschöpfung bei Kryptowährungen, zu Ermittlungen im Bereich von Darstellungen sexuellen Kindesmissbrauchs und zur Reform der Rechtshilfe. Er hielt bereits Vorträge auf nationalen und internationalen Konferenzen in Deutschland, Australien, Frankreich, Singapur, Indien, Kroatien, Montenegro und auf den Philippinen. Außerdem ist er assoziierter Wissenschaftler des Graduiertenkollegs „Cybercrime & Forensic Computing“ an der Friedrich-Alexander-Universität Erlangen-Nürnberg.'
+        'Thomas Goger ist Leitender Oberstaatsanwalt und seit der Gründung im Jahr 2015 stellvertretender Leiter der Zentralstelle Cybercrime Bayern. Diese Behörde mit derzeit 30 Staatsanwältinnen und Staatsanwälten sowie mehreren unterstützenden IT-Fachkräften ist eine der größten spezialisierten Einheiten Europas für die Verfolgung bedeutender Cybercrime-Fälle. Zu Beginn seiner Laufbahn war Thomas Goger als Staatsanwalt und Amtsrichter tätig. Er wurde von Ministerien und Parlamenten wiederholt als Berater zu verschiedenen Themen der Cyberkriminalität hinzugezogen. Im Jahr 2016 war er für einige Monate an den INTERPOL Global Complex for Innovation in Singapur abgeordnet. Seither tritt er als Redner und Moderator bei zahlreichen internationalen Veranstaltungen auf. Er ist Autor diverser Beiträge in juristischen Fachzeitschriften zur Vermögensabschöpfung bei Kryptowährungen, zu Ermittlungen im Bereich von Darstellungen sexuellen Kindesmissbrauchs und zur Reform der Rechtshilfe. Er hielt bereits Vorträge auf nationalen und internationalen Konferenzen in Deutschland, Australien, Frankreich, Singapur, Indien, Kroatien, Montenegro und auf den Philippinen. Außerdem ist er assoziierter Wissenschaftler des Graduiertenkollegs „Cybercrime & Forensic Computing“ an der Friedrich-Alexander-Universität Erlangen-Nürnberg.',
       ],
     },
   },

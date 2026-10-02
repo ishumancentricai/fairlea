@@ -5,6 +5,8 @@ export default defineTeamMember({
   id: 'leopold-mueller',
   name: 'Leopold Müller',
   image: { src: portrait, alt: 'Leopold Müller', width: 639, height: 955 },
+  visible: true,
+  former: false,
   order: 6,
   links: [
     { label: 'Email', href: 'mailto:leopold.mueller@uni-bayreuth.de' },

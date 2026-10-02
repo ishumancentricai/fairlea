@@ -10,6 +10,8 @@ export default defineTeamMember({
     width: 2362,
     height: 3543,
   },
+  visible: true,
+  former: false,
   order: 1,
   links: [
     { label: 'Email', href: 'mailto:lehrstuhl.str2@uni-bayreuth.de' },

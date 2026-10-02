@@ -11,6 +11,8 @@ import { supportedLocales } from '../../../site.config.js'
  * @property {string} id
  * @property {string} name
  * @property {{src: string, alt: string, width: number, height: number}} image
+ * @property {boolean} visible
+ * @property {boolean} former
  * @property {number} order
  * @property {readonly {label: string, href: string}[]} links
  * @property {Readonly<Record<'en' | 'de', LocalizedTeamMember>>} translations
@@ -29,7 +31,7 @@ import { supportedLocales } from '../../../site.config.js'
  * @property {string} startDate ISO 8601 date or date-time with offset.
  * @property {string} [endDate] ISO 8601 date or date-time with offset.
  * @property {string} timeZone IANA time zone.
- * @property {number} order
+ * @property {boolean} visible
  * @property {readonly {src: string, width: number, height: number, kind: 'poster' | 'photo', translations: Record<'en' | 'de', {alt: string, caption?: string}>}[]} images
  * @property {readonly {href: string, translations: Record<'en' | 'de', {label: string}>}[]} links
  * @property {Readonly<Record<'en' | 'de', LocalizedEvent>>} translations
@@ -41,6 +43,7 @@ import { supportedLocales } from '../../../site.config.js'
  * @property {string} citation
  * @property {string} href
  * @property {number} year
+ * @property {boolean} visible
  * @property {number} order
  * @property {'project' | 'related'} category
  * @property {Readonly<Record<'en' | 'de', {summary: string}>>} [translations]
@@ -63,7 +66,14 @@ function assertString(value, field, id) {
 }
 
 function assertOrder(value, id) {
-  assert(Number.isFinite(value), `${id}: order must be a finite number`)
+  assert(
+    Number.isInteger(value) && value > 0,
+    `${id}: order must be a positive integer`,
+  )
+}
+
+function assertBoolean(value, field, id) {
+  assert(typeof value === 'boolean', `${id}: ${field} must be a boolean`)
 }
 
 function assertPositiveInteger(value, field, id) {
@@ -147,6 +157,8 @@ export function defineTeamMember(entry) {
   assertString(entry.image?.alt, 'image.alt', entry.id)
   assertPositiveInteger(entry.image?.width, 'image.width', entry.id)
   assertPositiveInteger(entry.image?.height, 'image.height', entry.id)
+  assertBoolean(entry.visible, 'visible', entry.id)
+  assertBoolean(entry.former, 'former', entry.id)
   assertOrder(entry.order, entry.id)
   assertLinks(entry.links, entry.id)
   assertLocalized(entry.translations, [], entry.id)
@@ -193,7 +205,7 @@ export function defineEvent(entry) {
   } catch {
     throw new Error(`${entry.id}: timeZone must be a valid IANA time zone`)
   }
-  assertOrder(entry.order, entry.id)
+  assertBoolean(entry.visible, 'visible', entry.id)
   assertLocalized(entry.translations, ['title', 'location'], entry.id)
 
   const hasSummary = supportedLocales.some(
@@ -240,6 +252,7 @@ export function defineResearchEntry(entry) {
     Number.isInteger(entry.year) && entry.year > 1900,
     `${entry.id}: year must be a valid integer`,
   )
+  assertBoolean(entry.visible, 'visible', entry.id)
   assertOrder(entry.order, entry.id)
   assert(
     ['project', 'related'].includes(entry.category),

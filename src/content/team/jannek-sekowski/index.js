@@ -5,6 +5,8 @@ export default defineTeamMember({
   id: 'jannek-sekowski',
   name: 'Jannek Sekowski',
   image: { src: portrait, alt: 'Jannek Sekowski', width: 1580, height: 1580 },
+  visible: true,
+  former: false,
   order: 7,
   links: [
     { label: 'Email', href: 'mailto:jannek.sekowski@uni-bayreuth.de' },
@@ -18,7 +20,7 @@ export default defineTeamMember({
     },
     de: {
       biography: [
-        'Jannek Sekowski ist Informatiker, wissenschaftlicher Mitarbeiter am Institutsteil Wirtschaftsinformatik des Fraunhofer FIT und Doktorand am Lehrstuhl für Wirtschaftsinformatik und menschenzentrierte KI der Universität Bayreuth. Seine Forschung verbindet maschinelles Lernen mit Mensch-Computer-Interaktion (HCI) und menschenzentrierter KI. Sie reicht von der End-to-End-Modellentwicklung über die Gestaltung und Evaluation intelligenter interaktiver Systeme bis hin zur wirksamen menschlichen Aufsicht über Hochrisiko-KI-Systeme.'
+        'Jannek Sekowski ist Informatiker, wissenschaftlicher Mitarbeiter am Institutsteil Wirtschaftsinformatik des Fraunhofer FIT und Doktorand am Lehrstuhl für Wirtschaftsinformatik und menschenzentrierte KI der Universität Bayreuth. Seine Forschung verbindet maschinelles Lernen mit Mensch-Computer-Interaktion (HCI) und menschenzentrierter KI. Sie reicht von der End-to-End-Modellentwicklung über die Gestaltung und Evaluation intelligenter interaktiver Systeme bis hin zur wirksamen menschlichen Aufsicht über Hochrisiko-KI-Systeme.',
       ],
     },
   },

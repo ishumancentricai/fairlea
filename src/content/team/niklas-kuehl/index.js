@@ -10,6 +10,8 @@ export default defineTeamMember({
     width: 2519,
     height: 3778,
   },
+  visible: true,
+  former: false,
   order: 2,
   links: [
     { label: 'Email', href: 'mailto:kuehl@uni-bayreuth.de' },

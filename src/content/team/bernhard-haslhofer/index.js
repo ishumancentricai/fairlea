@@ -10,6 +10,8 @@ export default defineTeamMember({
     width: 248,
     height: 248,
   },
+  visible: true,
+  former: false,
   order: 3,
   links: [
     { label: 'Email', href: 'mailto:haslhofer@csh.ac.at' },
@@ -23,7 +25,7 @@ export default defineTeamMember({
     },
     de: {
       biography: [
-        'Bernhard Haslhofer ist Faculty-Mitglied und Leiter der Forschungsgruppe „Digital Currency Ecosystems“ am Complexity Science Hub. Sein Forschungsschwerpunkt liegt auf der Entwicklung und Anwendung von Data-Science-Methoden, um Erkenntnisse aus großen, vernetzten Datensätzen zu gewinnen. Aktuell konzentriert er sich vor allem auf die Analyse von Krypto-Assets und dezentralen Finanz-Ökosystemen (DeFi). Zuvor war er Thematic Coordinator in der Forschungsgruppe „Data Science & Artificial Intelligence“ am Austrian Institute of Technology (AIT), Marie-Curie-Stipendiat an der Cornell University (Information Science) sowie Assistenzprofessor an der Universität Wien. Er promovierte in Informatik an der Universität Wien und erwarb seinen Masterabschluss in Wirtschaftsinformatik an der Technischen Universität Wien. Er arbeitet regelmäßig in multidisziplinären Forschungsumfeldern und hat mehr als 60 wissenschaftliche Artikel in Fachzeitschriften und auf Konferenzen veröffentlicht. Darüber hinaus wirkte er an internationalen Standardisierungsinitiativen mit und leitete zahlreiche Projekte in der Grundlagen- und angewandten Forschung.'
+        'Bernhard Haslhofer ist Faculty-Mitglied und Leiter der Forschungsgruppe „Digital Currency Ecosystems“ am Complexity Science Hub. Sein Forschungsschwerpunkt liegt auf der Entwicklung und Anwendung von Data-Science-Methoden, um Erkenntnisse aus großen, vernetzten Datensätzen zu gewinnen. Aktuell konzentriert er sich vor allem auf die Analyse von Krypto-Assets und dezentralen Finanz-Ökosystemen (DeFi). Zuvor war er Thematic Coordinator in der Forschungsgruppe „Data Science & Artificial Intelligence“ am Austrian Institute of Technology (AIT), Marie-Curie-Stipendiat an der Cornell University (Information Science) sowie Assistenzprofessor an der Universität Wien. Er promovierte in Informatik an der Universität Wien und erwarb seinen Masterabschluss in Wirtschaftsinformatik an der Technischen Universität Wien. Er arbeitet regelmäßig in multidisziplinären Forschungsumfeldern und hat mehr als 60 wissenschaftliche Artikel in Fachzeitschriften und auf Konferenzen veröffentlicht. Darüber hinaus wirkte er an internationalen Standardisierungsinitiativen mit und leitete zahlreiche Projekte in der Grundlagen- und angewandten Forschung.',
       ],
     },
   },

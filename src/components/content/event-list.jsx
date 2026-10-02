@@ -13,7 +13,7 @@ export function EventList() {
   }
 
   return (
-    <div className="space-y-12">
+    <div className="divide-y divide-border">
       {events.map((event) => {
         const translation = event.translations[locale]
         const Body = event.body?.[locale]
@@ -47,7 +47,10 @@ export function EventList() {
         }
 
         return (
-          <article className="space-y-5" key={event.id}>
+          <article
+            className="space-y-5 py-12 first:pt-0 last:pb-0"
+            key={event.id}
+          >
             {posters.map((image) => renderImage(image, true))}
             <header>
               <h2 className="text-2xl font-semibold tracking-tight">

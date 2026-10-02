@@ -11,6 +11,7 @@ const messages = Object.freeze({
     primaryNavigation: 'Primary navigation',
     legalNavigation: 'Legal navigation',
     homeLabel: 'FAIRLEA home',
+    brandName: 'FAIRLEA @ University of Bayreuth',
     home: Object.freeze({
       subtitle:
         'An interdisciplinary investigation in the context of cryptoasset forensics',
@@ -42,6 +43,7 @@ const messages = Object.freeze({
       project: 'Project publication',
       related: 'Related work',
     }),
+    team: Object.freeze({ former: 'Former team members' }),
     event: Object.freeze({ date: 'Date', location: 'Location' }),
   }),
   de: Object.freeze({
@@ -49,6 +51,7 @@ const messages = Object.freeze({
     primaryNavigation: 'Hauptnavigation',
     legalNavigation: 'Rechtliche Navigation',
     homeLabel: 'FAIRLEA-Startseite',
+    brandName: 'FAIRLEA @ Universität Bayreuth',
     home: Object.freeze({
       subtitle:
         'Eine interdisziplinäre Untersuchung im Kontext der Kryptoasset-Forensik',
@@ -82,6 +85,7 @@ const messages = Object.freeze({
       project: 'Projektpublikation',
       related: 'Verwandte Forschung',
     }),
+    team: Object.freeze({ former: 'Ehemalige Teammitglieder' }),
     event: Object.freeze({ date: 'Datum', location: 'Ort' }),
   }),
 })

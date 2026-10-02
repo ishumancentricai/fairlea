@@ -7,7 +7,7 @@ export default defineEvent({
   startDate: '2026-06-17',
   endDate: '2026-06-18',
   timeZone: 'Europe/Berlin',
-  order: 2,
+  visible: true,
   images: [
     {
       src: photo01,

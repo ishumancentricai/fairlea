@@ -6,6 +6,7 @@ export default defineResearchEntry({
     'Müller, L., Elsner, J., Niedermayer, T., Haslhofer, B., Goger, T., Kühl, N., Rückert, C. (2026): How Reliable Is the Multi-Input Heuristic for Bitcoin Address Clustering in Law Enforcement Contexts?, arXiv Preprint',
   href: 'https://arxiv.org/abs/2607.07414',
   year: 2026,
+  visible: true,
   order: 1,
   category: 'project',
 })

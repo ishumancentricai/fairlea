@@ -5,10 +5,15 @@ export default defineTeamMember({
   id: 'anna-kannowski',
   name: 'Anna Kannowski',
   image: { src: portrait, alt: 'Anna Kannowski', width: 2738, height: 3327 },
+  visible: true,
+  former: false,
   order: 12,
   links: [
     { label: 'Email', href: 'mailto:anna.kannowski@uni-bayreuth.de' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/thomas-goger-134342353' },
+    {
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/thomas-goger-134342353',
+    },
   ],
   translations: {
     en: {

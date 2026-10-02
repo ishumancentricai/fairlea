@@ -52,74 +52,75 @@ function collect(modules, defineEntry) {
   })
 }
 
-export const teamMembers = Object.freeze(
-  collect(teamModules, defineTeamMember).sort(
-    (left, right) =>
-      left.order - right.order || left.name.localeCompare(right.name),
-  ),
+function assertUniqueOrder(entries, groupName) {
+  const orders = new Map()
+
+  for (const entry of entries.filter((candidate) => candidate.visible)) {
+    if (orders.has(entry.order)) {
+      throw new Error(
+        `${groupName}: ${orders.get(entry.order)} and ${entry.id} use visible order ${entry.order}`,
+      )
+    }
+
+    orders.set(entry.order, entry.id)
+  }
+}
+
+const allTeamMembers = collect(teamModules, defineTeamMember)
+const allEvents = collect(eventModules, defineEvent)
+const allResearchEntries = collect(researchModules, defineResearchEntry)
+
+assertUniqueOrder(
+  allTeamMembers.filter((member) => !member.former),
+  'current team members',
+)
+assertUniqueOrder(
+  allTeamMembers.filter((member) => member.former),
+  'former team members',
 )
 
-export const events = Object.freeze(
-  collect(eventModules, defineEvent).sort(
-    (left, right) =>
-      left.order - right.order || right.startDate.localeCompare(left.startDate),
-  ),
-)
+for (const category of ['project', 'related']) {
+  const categoryEntries = allResearchEntries.filter(
+    (entry) => entry.category === category,
+  )
+  const years = new Set(categoryEntries.map((entry) => entry.year))
 
-export const researchEntries = Object.freeze(
-  collect(researchModules, defineResearchEntry).sort(
-    (left, right) =>
-      right.year - left.year ||
-      left.order - right.order ||
-      left.id.localeCompare(right.id),
-  ),
-)
-
-const expectedIds = Object.freeze({
-  team: [
-    'christian-rueckert',
-    'niklas-kuehl',
-    'bernhard-haslhofer',
-    'thomas-goger',
-    'jana-elsner',
-    'leopold-mueller',
-    'jannek-sekowski',
-    'thomas-niedermayer',
-    'michael-froewis',
-    'simon-lobinger',
-    'sophia-schuetz',
-    'anna-kannowski',
-    'arian-javaheri',
-  ],
-  events: [
-    'crypto-crime-2026',
-    'second-project-meeting-2026',
-    'first-project-meeting-2025',
-    'kick-off-event-2025',
-  ],
-  research: [
-    'multi-input-heuristic-2026',
-    'generative-ai-provider-liability-2026',
-    'biometric-remote-identification-2026',
-    'vermoegensarrest-kryptodiebstahl-2025',
-    'koalitionsvertrag-it-strafrecht-2025',
-    'fairness-benefits-xai-2024',
-    'ki-als-beweismittel-2023',
-    'cryptocurrency-deanonymizations-2022',
-    'evidential-value-crypto-investigations-2020',
-  ],
-})
-
-function assertCollection(name, entries) {
-  const ids = entries.map((entry) => entry.id)
-
-  if (JSON.stringify(ids) !== JSON.stringify(expectedIds[name])) {
-    throw new Error(
-      `${name}: expected ordered ids ${expectedIds[name].join(', ')}, received ${ids.join(', ')}`,
+  for (const year of years) {
+    assertUniqueOrder(
+      categoryEntries.filter((entry) => entry.year === year),
+      `${category} research entries from ${year}`,
     )
   }
 }
 
-assertCollection('team', teamMembers)
-assertCollection('events', events)
-assertCollection('research', researchEntries)
+export const teamMembers = Object.freeze(
+  allTeamMembers
+    .filter((member) => member.visible)
+    .sort(
+      (left, right) =>
+        Number(left.former) - Number(right.former) ||
+        left.order - right.order ||
+        left.name.localeCompare(right.name),
+    ),
+)
+
+export const events = Object.freeze(
+  allEvents
+    .filter((event) => event.visible)
+    .sort(
+      (left, right) =>
+        right.startDate.localeCompare(left.startDate) ||
+        left.id.localeCompare(right.id),
+    ),
+)
+
+export const researchEntries = Object.freeze(
+  allResearchEntries
+    .filter((entry) => entry.visible)
+    .sort(
+      (left, right) =>
+        right.year - left.year ||
+        left.order - right.order ||
+        left.id.localeCompare(right.id),
+    ),
+)

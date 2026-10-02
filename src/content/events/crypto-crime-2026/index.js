@@ -6,7 +6,7 @@ export default defineEvent({
   startDate: '2026-10-08T09:30:00+02:00',
   endDate: '2026-10-08T18:15:00+02:00',
   timeZone: 'Europe/Berlin',
-  order: 1,
+  visible: true,
   images: [
     {
       src: poster,

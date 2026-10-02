@@ -5,6 +5,8 @@ export default defineTeamMember({
   id: 'michael-froewis',
   name: 'Michael Fröwis',
   image: { src: portrait, alt: 'Michael Fröwis', width: 512, height: 512 },
+  visible: true,
+  former: false,
   order: 9,
   links: [
     { label: 'Email', href: 'mailto:michael.froewis@iknaio.com' },

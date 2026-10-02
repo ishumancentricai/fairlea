@@ -4,7 +4,6 @@ import {
   getPageTranslation,
   localizedPath,
   navigationRoutes,
-  siteConfig,
 } from '../../../site.config.js'
 import { SiteSettings } from '@/components/layout/site-settings'
 import { useLocale } from '@/components/providers/locale-provider'
@@ -20,7 +19,7 @@ export function SiteHeader() {
           className="text-lg font-semibold tracking-tight"
           to={localizedPath(locale, 'home')}
         >
-          {siteConfig.shortTitle}
+          {messages.brandName}
         </NavLink>
 
         <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
