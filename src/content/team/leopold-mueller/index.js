@@ -11,6 +11,7 @@ export default defineTeamMember({
   links: [
     { label: 'Email', href: 'mailto:leopold.mueller@uni-bayreuth.de' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/leopoldmueller' },
+    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=qhVY6gwAAAAJ' },
   ],
   translations: {
     en: {

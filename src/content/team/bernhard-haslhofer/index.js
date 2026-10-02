@@ -16,6 +16,7 @@ export default defineTeamMember({
   links: [
     { label: 'Email', href: 'mailto:haslhofer@csh.ac.at' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/bernhardhaslhofer' },
+    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=15K0uBUAAAAJ' },
   ],
   translations: {
     en: {

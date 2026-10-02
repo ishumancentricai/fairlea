@@ -7,7 +7,7 @@ export default defineTeamMember({
   image: { src: portrait, alt: 'Sophia Schütz', width: 480, height: 640 },
   visible: true,
   former: false,
-  order: 11,
+  order: 10,
   links: [{ label: 'Email', href: 'mailto:sophia.schuetz@uni-bayreuth.de' }],
   translations: {
     en: {

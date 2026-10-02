@@ -7,7 +7,7 @@ export default defineTeamMember({
   image: { src: portrait, alt: 'Anna Kannowski', width: 2738, height: 3327 },
   visible: true,
   former: false,
-  order: 12,
+  order: 11,
   links: [
     { label: 'Email', href: 'mailto:anna.kannowski@uni-bayreuth.de' },
     {

@@ -6,8 +6,8 @@ export default defineTeamMember({
   name: 'Simon Lobinger',
   image: { src: portrait, alt: 'Simon Lobinger', width: 675, height: 803 },
   visible: true,
-  former: false,
-  order: 10,
+  former: true,
+  order: 1,
   links: [
     { label: 'Email', href: 'mailto:simon.lobinger@uni-bayreuth.de' },
     {
