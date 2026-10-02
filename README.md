@@ -1,87 +1,119 @@
-# FAIRLEA website
+# FAIRLEA Website
 
-React foundation for [fairlea.de](https://fairlea.de). The application uses
-React Router framework mode, Vite, Tailwind CSS, shadcn/ui, and local MDX
-content. Every public route is rendered to static HTML and can be hosted by
-GitHub Pages without a runtime server.
+Die Website für [fairlea.de](https://fairlea.de) basiert auf React 19, React
+Router, Vite, Tailwind CSS und shadcn/ui. Alle deutschen und englischen Seiten
+werden beim Build als statische Dateien erzeugt und über GitHub Pages
+veröffentlicht.
 
-The previous Jekyll implementation is preserved in `old-stack/` as a migration
-reference. It is intentionally excluded from the current build and tooling.
+## Lokal ausführen
 
-## Requirements
+### Voraussetzungen
 
 - Node.js 22 (`>=22.12.0 <23`)
 - npm 10
 
-Use the version from `.nvmrc` when a Node version manager is available.
+Die vorgesehene Node-Version steht zusätzlich in `.nvmrc`. Mit einem Node
+Version Manager kann sie beispielsweise so aktiviert werden:
 
-## Commands
+```sh
+nvm use
+```
+
+Anschließend im Repository-Verzeichnis die exakt im Lockfile festgehaltenen
+Abhängigkeiten installieren und den Entwicklungsserver starten:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-| Command                | Purpose                                     |
-| ---------------------- | ------------------------------------------- |
-| `npm run dev`          | Start the React Router development server.  |
-| `npm run build`        | Build and verify the static Pages artifact. |
-| `npm run preview`      | Preview the generated `dist/client` output. |
-| `npm run lint`         | Run ESLint.                                 |
-| `npm run format`       | Format maintained files with Prettier.      |
-| `npm run format:check` | Check formatting without changing files.    |
-| `npm run check`        | Run lint, formatting checks, and the build. |
+Die lokale Adresse wird anschließend im Terminal ausgegeben. Änderungen an
+Komponenten und Content werden während der Entwicklung automatisch übernommen.
 
-## Architecture
+Vor einem Commit sollte die vollständige lokale Prüfung ausgeführt werden:
 
-- `site.config.js` is the source of truth for locales, site metadata,
-  navigation, canonical URLs, legacy redirects, prerender paths, and sitemap
-  entries.
-- `src/routes.js` maps the route manifest to React Router route modules.
-- `src/root.jsx` provides the document shell, global layout, and root error
-  boundary. Its early bootstrap applies the saved theme and resolves `/` to a
-  language before hydration.
-- `src/content/pages/` holds automatically discovered, paired long-form MDX
-  content. Home and About both render the same `project-overview` pair.
-- `src/content/data/` validates and collects structured team, event, and
-  research entries.
-- `scripts/finalize-static-build.js` creates Pages-specific output and verifies
-  that every public route was generated.
-
-Every canonical page is generated below `/en/` and `/de/` with trailing-slash
-URLs. The language switch keeps the current route, query, and fragment. The URL
-is the source of truth; `fairlea:locale` is only used when resolving `/`.
-
-The appearance setting supports `system`, `light`, and `dark`. It is stored in
-`fairlea:theme`; `system` follows live operating-system color-scheme changes.
-
-## Content
-
-Use paired `.en.mdx` and `.de.mdx` files for long-form editorial pages. Shared
-renderers in `src/components/mdx/` provide consistent and accessible markup.
-The build fails if either language is missing. Migration-specific editorial
-follow-ups are tracked in `CONTENT_REVIEW.md`.
-
-Global branding belongs in `public/` when it needs a stable URL (for example
-the favicon) or in `src/assets/brand/` when it is imported by a component.
-Entity-specific images live beside the entity's `index.js` and are imported so
-Vite can validate and fingerprint them.
-
-Team members, events, and research entries live in individual directories:
-
-```text
-src/content/team/christian-rueckert/index.js
-src/content/events/project-meeting-2026/index.js
-src/content/research/example-publication/index.js
+```sh
+npm run check
 ```
 
-The collections discover every `index.js` automatically; no central ID list is
-maintained. Each local ID must still be unique, both translations are mandatory
-for translatable fields, and validation errors fail the production build. Set
-`visible: false` to keep a complete draft in the repository without rendering
-it on the website.
+Weitere Befehle:
 
-### Team member
+| Befehl                 | Zweck                                                          |
+| ---------------------- | -------------------------------------------------------------- |
+| `npm run dev`          | Startet den lokalen Entwicklungsserver.                        |
+| `npm run build`        | Erstellt und validiert die statische Website in `dist/client`. |
+| `npm run preview`      | Zeigt den zuvor erzeugten Produktions-Build lokal an.          |
+| `npm run lint`         | Prüft den JavaScript- und React-Code mit ESLint.               |
+| `npm run format`       | Formatiert die gepflegten Dateien mit Prettier.                |
+| `npm run format:check` | Prüft die Formatierung, ohne Dateien zu verändern.             |
+| `npm run check`        | Führt Lint, Format-Check und Produktions-Build aus.            |
+
+## Deployment
+
+Das Deployment wird vollständig durch
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) übernommen. Ein
+Push beziehungsweise ein Merge auf `main` reicht aus:
+
+```sh
+git push origin main
+```
+
+Der Workflow führt automatisch folgende Schritte aus:
+
+1. Abhängigkeiten mit `npm ci` installieren.
+2. Lint und Formatierung prüfen.
+3. Den statischen Produktions-Build erstellen.
+4. Ausschließlich `dist/client` als GitHub-Pages-Artefakt veröffentlichen.
+
+Pull Requests werden ebenfalls vollständig geprüft, aber niemals deployt. Den
+Status eines Deployments findet man im GitHub-Repository unter **Actions** im
+Workflow **Validate and deploy Pages**. Bei Bedarf kann derselbe Workflow dort
+auch manuell gestartet werden.
+
+Voraussetzung ist, dass unter **Settings → Pages → Build and deployment** als
+Quelle **GitHub Actions** ausgewählt ist. Die Domain wird weiterhin über
+GitHub Pages verwaltet; `public/CNAME` enthält zusätzlich `fairlea.de` für das
+erzeugte Artefakt.
+
+## Content hinzufügen
+
+Teammitglieder, Events und Research-Einträge liegen jeweils in einem eigenen
+Unterordner:
+
+```text
+src/content/team/<id>/index.js
+src/content/events/<id>/index.js
+src/content/research/<id>/index.js
+```
+
+Alle `index.js`-Dateien in diesen Verzeichnissen werden automatisch gefunden.
+
+Für alle Content-Typen gelten folgende Regeln:
+
+- `id` verwendet ausschließlich Kleinbuchstaben, Zahlen und Bindestriche
+  (`kebab-case`) und ist innerhalb der jeweiligen Collection eindeutig.
+- Der Verzeichnisname sollte der `id` entsprechen, damit Dateien leicht
+  auffindbar bleiben.
+- `visible: true` veröffentlicht den Eintrag. Mit `visible: false` kann ein
+  vollständiger Entwurf im Repository verbleiben, ohne angezeigt zu werden.
+- Übersetzbare Inhalte werden vollständig unter `translations.en` und
+  `translations.de` gepflegt. Es gibt keine automatische Übersetzung.
+- Bilder liegen direkt neben dem zugehörigen `index.js` und werden importiert.
+  `width` und `height` geben die intrinsische Pixelgröße der Originaldatei an.
+- Änderungen mit `npm run check` prüfen. Fehlende Übersetzungen, doppelte IDs,
+  ungültige Werte oder unvollständige MDX-Paare lassen den Build fehlschlagen.
+
+### Teammitglied hinzufügen
+
+Beispielstruktur:
+
+```text
+src/content/team/example-person/
+├── index.js
+└── portrait.jpg
+```
+
+Beispiel für `index.js`:
 
 ```js
 import portrait from './portrait.jpg'
@@ -99,24 +131,55 @@ export default defineTeamMember({
   visible: true,
   former: false,
   order: 10,
-  links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/' }],
+  links: [
+    { label: 'Email', href: 'mailto:person@example.org' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/example' },
+    {
+      label: 'Google Scholar',
+      href: 'https://scholar.google.com/citations?user=example',
+    },
+  ],
   translations: {
-    en: { role: 'Researcher', biography: ['English biography.'] },
-    de: { role: 'Wissenschaftlerin', biography: ['Deutsche Biografie.'] },
+    en: {
+      role: 'Researcher',
+      biography: ['First English paragraph.', 'Second English paragraph.'],
+    },
+    de: {
+      role: 'Wissenschaftliche Mitarbeiterin',
+      biography: ['Erster deutscher Absatz.', 'Zweiter deutscher Absatz.'],
+    },
   },
 })
 ```
 
-`role` is optional. If supplied, it is required in both languages. Biography
-paragraphs are always arrays and must contain at least one non-empty paragraph
-per language. Current and former team members are rendered in separate groups;
-`order` must be unique among the visible entries within the respective group.
-Former members always appear in the final, localized section.
+| Attribut                       | Bedeutung                                                                                                                                                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                           | Eindeutige ID und Anker der Person, beispielsweise `#example-person`.                                                                                              |
+| `name`                         | Vollständiger, nicht übersetzter Name.                                                                                                                             |
+| `image`                        | Pflichtbild mit importierter Quelle, Alt-Text sowie Breite und Höhe.                                                                                               |
+| `visible`                      | Steuert, ob die Person auf der Website erscheint.                                                                                                                  |
+| `former`                       | `true` zeigt die Person im separaten Abschnitt „Ehemalige“ an.                                                                                                     |
+| `order`                        | Positive Ganzzahl für die Reihenfolge. Sie muss innerhalb der sichtbaren aktuellen beziehungsweise ehemaligen Mitglieder eindeutig sein.                           |
+| `links`                        | Liste aus `label` und `href`; eine leere Liste ist erlaubt. E-Mail, LinkedIn und Google Scholar erhalten anhand von URL beziehungsweise Label ihr jeweiliges Icon. |
+| `translations.en/de.role`      | Optionale Rolle. Sobald sie in einer Sprache gesetzt ist, muss sie in beiden vorhanden sein.                                                                       |
+| `translations.en/de.biography` | Pflichtfeld mit mindestens einem Absatz als String-Array.                                                                                                          |
 
-### Event
+### Event hinzufügen
+
+Beispielstruktur:
+
+```text
+src/content/events/example-event/
+├── index.js
+├── poster.png
+└── photo-01.jpg
+```
+
+Beispiel für `index.js`:
 
 ```js
 import photo from './photo-01.jpg'
+import poster from './poster.png'
 import { defineEvent } from '../../data/schema.js'
 
 export default defineEvent({
@@ -127,19 +190,32 @@ export default defineEvent({
   visible: true,
   images: [
     {
+      src: poster,
+      width: 1200,
+      height: 1600,
+      kind: 'poster',
+      translations: {
+        en: { alt: 'English description of the poster' },
+        de: { alt: 'Deutsche Beschreibung des Posters' },
+      },
+    },
+    {
       src: photo,
       width: 1600,
       height: 900,
       kind: 'photo',
       translations: {
-        en: { alt: 'English description' },
-        de: { alt: 'Deutsche Beschreibung' },
+        en: { alt: 'English description', caption: 'Optional caption' },
+        de: {
+          alt: 'Deutsche Beschreibung',
+          caption: 'Optionale Bildunterschrift',
+        },
       },
     },
   ],
   links: [
     {
-      href: 'https://example.com/',
+      href: 'https://example.org/',
       translations: {
         en: { label: 'Further information' },
         de: { label: 'Weitere Informationen' },
@@ -147,24 +223,48 @@ export default defineEvent({
     },
   ],
   translations: {
-    en: { title: 'Example event', location: 'Bayreuth', summary: 'Summary.' },
+    en: {
+      title: 'Example event',
+      location: 'Bayreuth',
+      summary: 'Short English description.',
+    },
     de: {
       title: 'Beispielveranstaltung',
       location: 'Bayreuth',
-      summary: 'Zusammenfassung.',
+      summary: 'Kurze deutsche Beschreibung.',
     },
   },
 })
 ```
 
-Date-only values use `YYYY-MM-DD`; date-times require an explicit UTC offset.
-The renderer formats them with `en-GB` or `de-DE` and the configured IANA time
-zone. `summary` is optional; when present it is required in both languages.
-Use `kind: 'poster'` for prominent event artwork and `kind: 'photo'` for the
-gallery. Events are sorted automatically by `startDate`, newest first, so they
-do not have a manually maintained `order` field.
+| Attribut                              | Bedeutung                                                                                                                            |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                  | Eindeutige ID und Anker des Events.                                                                                                  |
+| `startDate`                           | Start als ISO-Datum (`YYYY-MM-DD`) oder ISO-Zeitstempel mit explizitem UTC-Offset.                                                   |
+| `endDate`                             | Optionales Ende im gleichen Format; darf nicht vor dem Start liegen.                                                                 |
+| `timeZone`                            | Gültige IANA-Zeitzone für die lokalisierte Anzeige, üblicherweise `Europe/Berlin`.                                                   |
+| `visible`                             | Steuert, ob das Event angezeigt wird.                                                                                                |
+| `images`                              | Geordnete Bildliste; eine leere Liste ist erlaubt. `poster` wird direkt vollständig angezeigt, `photo` als Vorschau und im Carousel. |
+| `images[].translations.en/de.alt`     | Verpflichtender Alt-Text in beiden Sprachen.                                                                                         |
+| `images[].translations.en/de.caption` | Optionale Bildunterschrift. Sobald sie gesetzt ist, muss sie in beiden Sprachen vorhanden sein.                                      |
+| `links`                               | Geordnete Liste externer Links mit zweisprachigem Linktext; eine leere Liste ist erlaubt.                                            |
+| `translations.en/de.title`            | Verpflichtender lokalisierter Veranstaltungstitel.                                                                                   |
+| `translations.en/de.location`         | Verpflichtender lokalisierter Veranstaltungsort.                                                                                     |
+| `translations.en/de.summary`          | Optionale Kurzbeschreibung. Sobald sie gesetzt ist, muss sie in beiden Sprachen vorhanden sein.                                      |
 
-### Research entry
+Events besitzen kein `order`-Attribut. Sie werden automatisch nach
+`startDate` absteigend sortiert, das neueste Event steht also zuerst.
+
+### Research-Eintrag hinzufügen
+
+Beispielstruktur:
+
+```text
+src/content/research/example-publication/
+└── index.js
+```
+
+Beispiel für `index.js`:
 
 ```js
 import { defineResearchEntry } from '../../data/schema.js'
@@ -175,7 +275,7 @@ export default defineResearchEntry({
   href: 'https://doi.org/example',
   year: 2027,
   visible: true,
-  order: 10,
+  order: 1,
   category: 'project',
   translations: {
     en: { summary: 'English contextual summary.' },
@@ -184,36 +284,36 @@ export default defineResearchEntry({
 })
 ```
 
-Bibliographic citations remain in their published language. The optional
-contextual summary must be supplied in both languages when used. Research is
-grouped by `category`, sorted by year in descending order, and then by `order`.
-For visible entries, `order` must be unique only within the same category and
-year, so a new publication year can start at `1` again.
+| Attribut                     | Bedeutung                                                                                                                                      |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                         | Eindeutige ID und Anker der Publikation.                                                                                                       |
+| `citation`                   | Vollständige bibliografische Angabe in der veröffentlichten Originalsprache.                                                                   |
+| `href`                       | Externe Zieladresse, beispielsweise DOI oder Publikationsseite.                                                                                |
+| `year`                       | Publikationsjahr als Ganzzahl größer als 1900.                                                                                                 |
+| `visible`                    | Steuert, ob der Eintrag angezeigt wird.                                                                                                        |
+| `order`                      | Positive Ganzzahl für die Reihenfolge innerhalb desselben Jahres und derselben Kategorie. Dort muss sie für sichtbare Einträge eindeutig sein. |
+| `category`                   | `project` für FAIRLEA-Projektpublikationen oder `related` für verwandte Forschung.                                                             |
+| `translations.en/de.summary` | Optionale zweisprachige Einordnung. Wird `translations` verwendet, sind beide Zusammenfassungen Pflicht.                                       |
 
-For a long, formatted biography, event description, or research explanation,
-add `body.en.mdx` and `body.de.mdx` next to the entry's `index.js`. Both files
-are required as a pair and replace the short text when rendered. Content files
-never define layout JSX; shared React components own the presentation.
+Research-Einträge werden zuerst nach Jahr absteigend und innerhalb eines Jahres
+nach `order` aufsteigend sortiert. Die Zitation selbst wird nicht übersetzt.
 
-Repository content is trusted at build time. Do not accept or compile arbitrary
-user-provided MDX.
+### Längere Texte mit MDX
 
-## GitHub Pages deployment
+Wenn eine Biografie, Eventbeschreibung oder Research-Einordnung Überschriften,
+Listen oder eingebettete Links benötigt, können neben `index.js` zwei MDX-Dateien
+angelegt werden:
 
-The workflow in `.github/workflows/pages.yml` validates pull requests and
-deploys `dist/client` after successful pushes to `main`. Pull requests never
-deploy.
+```text
+body.en.mdx
+body.de.mdx
+```
 
-Before the first React deployment:
+Beide Dateien sind immer gemeinsam erforderlich. Der lokalisierte MDX-Body wird
+anstelle der kurzen Biografie, `summary` beziehungsweise Research-Einordnung
+gerendert. Die strukturellen Pflichtfelder des jeweiligen `index.js` bleiben
+trotzdem gültig; insbesondere benötigt ein Teammitglied weiterhin die
+zweisprachigen `biography`-Arrays.
 
-1. Finish and review the content migration on the feature branch.
-2. Open **Settings → Pages → Build and deployment** in GitHub.
-3. Change **Source** from **Deploy from a branch** to **GitHub Actions**.
-4. Merge the completed migration into `main`.
-5. Verify the new workflow, custom domain, HTTPS, direct route loads, and the
-   custom 404 page.
-
-The existing `pages-build-deployment` history belongs to GitHub's managed
-branch/Jekyll workflow. It remains visible in Actions but is superseded after
-the Pages source is changed. The custom domain remains configured in GitHub;
-`public/CNAME` mirrors it into the generated artifact.
+Content-Dateien enthalten ausschließlich Inhalte. Layout und Darstellung
+bleiben in den gemeinsamen React-Komponenten.
