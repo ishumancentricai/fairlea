@@ -23,6 +23,17 @@ const bodyModules = import.meta.glob(
   ],
   { eager: true, import: 'default' },
 )
+const bodyTextModules = import.meta.glob(
+  [
+    '../team/**/body.en.mdx',
+    '../team/**/body.de.mdx',
+    '../events/**/body.en.mdx',
+    '../events/**/body.de.mdx',
+    '../research/**/body.en.mdx',
+    '../research/**/body.de.mdx',
+  ],
+  { eager: true, import: 'default', query: '?raw' },
+)
 
 function collect(modules, defineEntry) {
   const ids = new Set()
@@ -32,6 +43,8 @@ function collect(modules, defineEntry) {
     const directory = modulePath.slice(0, -'/index.js'.length)
     const englishBody = bodyModules[`${directory}/body.en.mdx`]
     const germanBody = bodyModules[`${directory}/body.de.mdx`]
+    const englishBodyText = bodyTextModules[`${directory}/body.en.mdx`]
+    const germanBodyText = bodyTextModules[`${directory}/body.de.mdx`]
 
     if (ids.has(entry.id)) {
       throw new Error(`Duplicate content id: ${entry.id}`)
@@ -41,12 +54,26 @@ function collect(modules, defineEntry) {
       throw new Error(`${entry.id}: body.en.mdx and body.de.mdx must be paired`)
     }
 
+    if (
+      englishBody &&
+      (typeof englishBodyText !== 'string' ||
+        typeof germanBodyText !== 'string')
+    ) {
+      throw new Error(`${entry.id}: MDX body text could not be indexed`)
+    }
+
     ids.add(entry.id)
 
     return Object.freeze({
       ...entry,
       ...(englishBody
-        ? { body: Object.freeze({ en: englishBody, de: germanBody }) }
+        ? {
+            body: Object.freeze({ en: englishBody, de: germanBody }),
+            bodyText: Object.freeze({
+              en: englishBodyText,
+              de: germanBodyText,
+            }),
+          }
         : {}),
     })
   })

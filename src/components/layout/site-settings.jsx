@@ -1,8 +1,9 @@
-import { ChevronDown, Globe2, Moon, Sun } from 'lucide-react'
+import { ChevronDown, Globe2, Moon, Search, Sun } from 'lucide-react'
 import { useLocation, useNavigate } from 'react-router'
 
 import { switchLocalePath } from '../../../site.config.js'
 import { useLocale } from '@/components/providers/locale-provider'
+import { useSearch } from '@/components/providers/search-provider'
 import { useTheme } from '@/components/providers/theme-provider'
 import { Button } from '@/components/ui/button'
 import {
@@ -24,6 +25,7 @@ import { Toggle } from '@/components/ui/toggle'
 export function SiteSettings() {
   const { locale, messages } = useLocale()
   const { resolvedTheme, setTheme } = useTheme()
+  const { openSearch } = useSearch()
   const location = useLocation()
   const navigate = useNavigate()
   const isDark = resolvedTheme === 'dark'
@@ -97,6 +99,24 @@ export function SiteSettings() {
             </DropdownMenuRadioGroup>
           </DropdownMenuContent>
         </DropdownMenu>
+
+        <Separator className="h-7" orientation="vertical" />
+
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button
+                aria-label={messages.search.open}
+                onClick={openSearch}
+                size="icon"
+                variant="ghost"
+              />
+            }
+          >
+            <Search aria-hidden="true" />
+          </TooltipTrigger>
+          <TooltipContent side="bottom">{messages.search.open}</TooltipContent>
+        </Tooltip>
       </div>
     </TooltipProvider>
   )

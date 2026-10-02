@@ -104,7 +104,10 @@ function EventArticle({ event, locale, messages }) {
   }
 
   return (
-    <article className="space-y-5 py-12 first:pt-0 last:pb-0">
+    <article
+      className="scroll-mt-36 space-y-5 py-12 first:pt-0 last:pb-0"
+      id={event.id}
+    >
       <header>
         <h2 className="text-2xl font-semibold tracking-tight">
           {translation.title}

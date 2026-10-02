@@ -13,7 +13,9 @@ import { NotFoundContent } from '@/components/layout/not-found-content'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { SiteHeader } from '@/components/layout/site-header'
 import { LocaleProvider } from '@/components/providers/locale-provider'
+import { SearchProvider } from '@/components/providers/search-provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { SiteSearch } from '@/components/search/site-search'
 import { getDocumentLocale, getMessages } from '@/lib/i18n'
 import './index.css'
 
@@ -40,19 +42,22 @@ export function Layout({ children }) {
       <body>
         <LocaleProvider locale={locale}>
           <ThemeProvider>
-            <a
-              className="sr-only z-50 rounded-md bg-background px-4 py-2 focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:ring-2 focus:ring-ring"
-              href="#main-content"
-            >
-              {messages.skipToContent}
-            </a>
-            <div className="flex min-h-svh flex-col bg-background text-foreground">
-              <SiteHeader />
-              <main className="flex flex-1" id="main-content">
-                {children}
-              </main>
-              <SiteFooter />
-            </div>
+            <SearchProvider>
+              <a
+                className="sr-only z-50 rounded-md bg-background px-4 py-2 focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:ring-2 focus:ring-ring"
+                href="#main-content"
+              >
+                {messages.skipToContent}
+              </a>
+              <div className="flex min-h-svh flex-col bg-background text-foreground">
+                <SiteHeader />
+                <main className="flex flex-1" id="main-content">
+                  {children}
+                </main>
+                <SiteFooter />
+              </div>
+              <SiteSearch />
+            </SearchProvider>
           </ThemeProvider>
         </LocaleProvider>
         <ScrollRestoration />

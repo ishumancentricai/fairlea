@@ -27,7 +27,7 @@ export function ResearchList() {
               const Body = entry.body?.[locale]
 
               return (
-                <li key={entry.id}>
+                <li className="scroll-mt-36" id={entry.id} key={entry.id}>
                   <p className="text-sm font-medium text-muted-foreground">
                     {entry.year}
                   </p>
